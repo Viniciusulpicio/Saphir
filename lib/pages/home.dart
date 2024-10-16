@@ -11,7 +11,7 @@ class _MyWidgetState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder(
-      child: Text("test tasdasdsop"),
+      child: Text("home"),
     );
   }
 }
