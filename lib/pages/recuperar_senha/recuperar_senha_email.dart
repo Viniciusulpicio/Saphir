@@ -11,7 +11,7 @@ class _MyWidgetState extends State<RecuperarSenhaEmail> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder(
-      child: Text("jhuan maldito"),
+      child: Text("jhuan incrivel"),
     );
   }
 }
