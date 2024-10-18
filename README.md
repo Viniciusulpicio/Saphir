@@ -16,6 +16,10 @@ Este projeto foi desenvolvido pelos seguintes membros:
 - **Figma**: Utilizado para o design da interface do usuário.
 - **Flutter**: Framework utilizado para o desenvolvimento do aplicativo móvel.
 
+## Link do Design no Figma
+
+Você pode acessar o design do Saphir no Figma através deste [link](https://www.figma.com/proto/TvxrvgwebtVlTfa8s0c2Mn/Saphir-App---Giovani%2C-Lucas-M.%2C-Jhuan-%26-Vinicius?node-id=600-727&node-type=frame&t=na6a57e7p02vXvMR-0&scaling=scale-down&content-scaling=fixed&page-id=151%3A394) público.
+
 ## Funcionalidades
 
 O Saphir oferece as seguintes funcionalidades:
