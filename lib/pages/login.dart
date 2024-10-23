@@ -115,15 +115,15 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       padding: const EdgeInsets.only(right: 40),
                       child: Align(
                         alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {
-                            // Função de esquecimento de senha
-                          },
-                          child: const Text(
-                            "Esqueceu a senha?",
-                            style: TextStyle(color: Colors.blue),
+                          child: GestureDetector(
+                            child: const Text(
+                              "Esqueceu a senha?",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, "/recuperarEmail");
+                            },
                           ),
-                        ),
                       ),
                     ),
                     const SizedBox(height: 40),
