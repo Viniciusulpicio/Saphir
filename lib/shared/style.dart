@@ -11,54 +11,61 @@ class MyFonts{
   static String fontPrimary = "NotoSansWarangCiti";
 }
 
-// import 'package:flutter/material.dart';
 
-// class GradientBackground extends StatelessWidget {
-//   final Widget child;
+class GradientBackground extends StatelessWidget {
+  final Widget child;
 
-//   const GradientBackground({required this.child, Key? key});
+  const GradientBackground({required this.child, super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Stack(
-//       children: [
-//         // Gradiente superior
-//         Positioned.fill(
-//           child: Container(
-//             decoration: const BoxDecoration(
-//               gradient: LinearGradient(
-//                 begin: Alignment.topCenter,
-//                 end: Alignment.bottomCenter,
-//                 colors: [
-//                   Color(0xFF000814), // Cor no topo
-//                   Color(0xFF030469), // Cor embaixo
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ),
-//         // Gradiente inferior (com cores invertidas)
-//         Positioned.fill(
-//           child: Align(
-//             alignment: Alignment.bottomCenter,
-//             child: Container(
-//               height: 200, // Altura do gradiente inferior
-//               decoration: const BoxDecoration(
-//                 gradient: LinearGradient(
-//                   begin: Alignment.topCenter,
-//                   end: Alignment.bottomCenter,
-//                   colors: [
-//                     Color(0xFF030469), // Cor no topo
-//                     Color(0xFF000814), // Cor embaixo
-//                   ],
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ),
-//         // Conteúdo da página
-//         child,
-//       ],
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        // Gradiente superior (com altura menor)
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          child: Container(
+            height: 150, // Altura menor para o gradiente superior
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF030469), // Cor no topo
+                  Color(0xFF000814), // Cor mais escura no meio
+                ],
+                stops: [0.0, 1.0], // Suavidade do gradiente
+              ),
+            ),
+          ),
+        ),
+        // Gradiente inferior
+        Positioned.fill(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 200, // Altura do gradiente inferior
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0xFF000814), // Cor mais escura
+                    Color(0xFF030469), // Cor no fundo
+                  ],
+                  stops: [0.3, 1.0], // Controle de transição
+                ),
+              ),
+            ),
+          ),
+        ),
+        // Conteúdo da página
+        Positioned.fill(
+          child: child,
+        ),
+      ],
+    );
+  }
+}
