@@ -87,7 +87,7 @@ class _SplashScreenState extends State<Splash> with TickerProviderStateMixin {
             ScaleTransition(
               scale: _iconAnimation,
               child: Image.asset(
-                'assets/image/saphir.png',
+                'assets/image/logo.png',
                 width: 350, // Tamanho grande inicial
                 height: 350, // Tamanho grande inicial
               ),

@@ -155,7 +155,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/google.png'),
+                            child: Image.asset('assets/image/login/facebook.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -164,7 +164,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/apple.png'),
+                            child: Image.asset('assets/image/login/aple.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -173,7 +173,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/facebook.png'),
+                            child: Image.asset('assets/image/login/google.png'),
                           ),
                         ),
                       ],
@@ -238,11 +238,12 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     );
   }
 
-  buttonEnterClick() {
-    if (_formKey.currentState!.validate()) {
-      print("form ok");
-    } else {
-      print("form erro");
-    }
+void buttonEnterClick() {
+  if (_formKey.currentState!.validate()) {
+    Navigator.pushNamed(context, '/home');
+  } else {
+    print("form erro");
   }
+}
+
 }
