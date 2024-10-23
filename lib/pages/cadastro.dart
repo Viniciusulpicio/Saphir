@@ -11,7 +11,8 @@ class _MyWidgetState extends State<Cadastro> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,8 @@ class _MyWidgetState extends State<Cadastro> {
                       print("Entrar com o Google pressionado");
                     },
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 80, vertical: 10),
                       side: const BorderSide(color: Colors.white, width: 2),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -82,7 +84,8 @@ class _MyWidgetState extends State<Cadastro> {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
                         child: Text('ou',
-                            style: TextStyle(fontSize: 20, color: Colors.white)),
+                            style:
+                                TextStyle(fontSize: 20, color: Colors.white)),
                       ),
                       Expanded(
                         child: Divider(
@@ -161,7 +164,9 @@ class _MyWidgetState extends State<Cadastro> {
                       print("Cadastrar-se pressionado");
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15), backgroundColor: const Color.fromARGB(255, 23, 44, 228),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 100, vertical: 15),
+                      backgroundColor: const Color.fromARGB(255, 23, 44, 228),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
@@ -173,14 +178,17 @@ class _MyWidgetState extends State<Cadastro> {
                   ),
                   const SizedBox(height: 20),
                   GestureDetector(
-                    onTap: () {
-                      print("Entrar pressionado");
-                    },
-                    child: const Text(
-                      "Tem uma conta? Entre",
-                      style: TextStyle(color: Colors.blue, fontSize: 16),
-                    ),
-                  ),
+                      onTap: () {
+                        print("Entrar pressionado");
+                      },
+                      child: GestureDetector(
+                          child: const Text(
+                            "Tem uma conta? Entre",
+                            style: TextStyle(color: Colors.blue, fontSize: 16),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/login");
+                          })),
                 ],
               ),
             ),

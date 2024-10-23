@@ -20,34 +20,47 @@ class _MyWidgetState extends State<RecuperarSenhaEmail> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              const Text(
-                          "saphir",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 23, 44, 228),
-                              fontSize: 60,
-                              fontFamily: 'DaysOne',
-                              ),
-                        ),
-                              const Text("Digite o email de recuperação:",
-                                  style: TextStyle(color: Colors.white)),
-                              Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 30.0),
-                                  child: TextFormField(
-                                      autocorrect: false,
-                                      autofocus: false,
-                                      decoration: const InputDecoration(
-                                          filled: true, // Preenche o fundo
-                                          fillColor: Colors.white,
-                                          iconColor:
-                                              Color.fromARGB(255, 23, 44, 228),
-                                          hintText: "E-mail",
-                                          hintStyle:
-                                              TextStyle(color: Colors.grey),
-                                          border: OutlineInputBorder(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(30)),
-                                              borderSide: BorderSide.none)))),
-                            ]))))));
+              const Text(
+                "saphir",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 23, 44, 228),
+                  fontSize: 60,
+                  fontFamily: 'DaysOne',
+                ),
+              ),
+              const Text("Digite o email de recuperação:",
+                  style: TextStyle(color: Colors.white)),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  child: TextFormField(
+                      autocorrect: false,
+                      autofocus: false,
+                      decoration: const InputDecoration(
+                          filled: true, // Preenche o fundo
+                          fillColor: Colors.white,
+                          iconColor: Color.fromARGB(255, 23, 44, 228),
+                          hintText: "E-mail",
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(30)),
+                              borderSide: BorderSide.none)))),
+              Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/home");
+                  },
+                  style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 170, vertical: 15),
+                      side: const BorderSide(color: Colors.white, width: 2),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30)),
+                      backgroundColor: const Color.fromARGB(255, 30, 30, 30)),
+                  child: const Text("Próximo",
+                      style: TextStyle(color: Colors.white)),
+                ),
+              )
+            ]))))));
   }
 }
