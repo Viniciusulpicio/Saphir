@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -155,7 +154,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/login/facebook.png'),
+                            child:
+                                Image.asset('assets/image/login/facebook.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -238,12 +238,11 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     );
   }
 
-void buttonEnterClick() {
-  if (_formKey.currentState!.validate()) {
-    Navigator.pushNamed(context, '/home');
-  } else {
-    print("form erro");
+  void buttonEnterClick() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, '/home');
+    } else {
+      print("form erro");
+    }
   }
-}
-
 }
