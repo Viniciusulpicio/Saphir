@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:saphir/pages/login.dart';
-import 'package:saphir/pages/home.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
@@ -15,6 +13,7 @@ class _MyWidgetState extends State<Cadastro> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
+  // Chave Global para o formulário
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -23,6 +22,7 @@ class _MyWidgetState extends State<Cadastro> {
       backgroundColor: const Color.fromARGB(255, 30, 30, 30),
       body: Center(
         child: Form(
+          key: _formKey, // Associar a chave ao Form
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -62,7 +62,7 @@ class _MyWidgetState extends State<Cadastro> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Image.asset(
-                          'assets/image/cadastro/google.png', // Substitua pelo caminho do seu ícone do Google
+                          'assets/image/cadastro/google.png',
                           height: 24,
                           width: 24,
                         ),
@@ -87,8 +87,8 @@ class _MyWidgetState extends State<Cadastro> {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
                         child: Text('ou',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white)),
+                            style: TextStyle(
+                                fontSize: 20, color: Colors.white)),
                       ),
                       Expanded(
                         child: Divider(
@@ -114,8 +114,8 @@ class _MyWidgetState extends State<Cadastro> {
                     ),
                     style: const TextStyle(color: Colors.black),
                     validator: (String? email) {
-                      if (email == "" || email == null) {
-                        return "O email não pode estar vazio";
+                      if (email == null || email.isEmpty) {
+                        return "O campo email não pode estar vazio";
                       }
                       if (email.length < 6) {
                         return "O e-mail está muito curto";
@@ -124,7 +124,7 @@ class _MyWidgetState extends State<Cadastro> {
                         return "O e-mail não é valido";
                       }
                       return null;
-                    }, // Para ocul
+                    },
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
@@ -142,13 +142,13 @@ class _MyWidgetState extends State<Cadastro> {
                     style: const TextStyle(color: Colors.black),
                     validator: (String? usuario) {
                       if (usuario == null || usuario.isEmpty) {
-                        return "O nome de usuário não pode estar vazio";
+                        return "O campo usuário não pode estar vazio";
                       }
                       if (usuario.length < 4) {
                         return "O nome de usuário deve ter pelo menos 4 caracteres";
                       }
                       if (usuario.length > 12) {
-                        return "O nome de usuário deve ter no máximo 12 caracteres";
+                        return "O nome de usuário deve ter no máximo 16 caracteres";
                       }
                       return null;
                     },
@@ -170,7 +170,7 @@ class _MyWidgetState extends State<Cadastro> {
                     style: const TextStyle(color: Colors.black),
                     validator: (String? senha) {
                       if (senha == null || senha.isEmpty) {
-                        return "A senha não pode estar vazia";
+                        return "O campo senha não pode estar vazio";
                       }
                       if (senha.length < 8) {
                         return "A senha deve ter pelo menos 8 caracteres";
@@ -195,7 +195,7 @@ class _MyWidgetState extends State<Cadastro> {
                     style: const TextStyle(color: Colors.black),
                     validator: (String? confirmPassword) {
                       if (confirmPassword == null || confirmPassword.isEmpty) {
-                        return "A confirmação de senha não pode estar vazia";
+                        return "Esse campo não pode estar vazio";
                       }
                       if (confirmPassword != _passwordController.text) {
                         return "Senha incorreta";
@@ -207,10 +207,9 @@ class _MyWidgetState extends State<Cadastro> {
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // Se todos os campos forem válidos, navega para a home
+
                         Navigator.pushNamed(context, '/home');
                       } else {
-                        // Caso contrário, o formulário exibe os erros
                         print("Erro no formulário");
                       }
                     },
@@ -242,10 +241,4 @@ class _MyWidgetState extends State<Cadastro> {
       ),
     );
   }
-}
-
-// ignore: camel_case_types
-class _formKey {
-  // ignore: prefer_typing_uninitialized_variables
-  static var currentState;
 }
