@@ -173,7 +173,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/apple.png'),
+                            child: Image.asset('assets/image/login/aple.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -182,7 +182,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/facebook.png'),
+                            child: Image.asset('assets/image/login/google.png'),
                           ),
                         ),
                       ],
