@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/jogos/stardew_valley.dart';
 import 'package:saphir/shared/style.dart';
 
 import 'package:saphir/pages/splash.dart';
@@ -13,6 +14,7 @@ import 'package:saphir/pages/jogos/star_wars.dart';
 import 'package:saphir/pages/recuperar_senha/nova_senha.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_codigo.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_email.dart';
+import 'package:saphir/components/barra_pesquisa.dart';
 
 
 void main() {
@@ -44,9 +46,14 @@ class MyApp extends StatelessWidget {
         '/lifeIs' : (context) =>  const LifeIsStrange(),
         '/redDead' : (context) => const RedDead(),
         '/starWars' : (context) => const StarWars(),
+        '/stardewValley' : (context) => const StardewValley(),
         '/novaSenha' : (context) => const NovaSenha(),
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
+        '/barraPesuisa' : (context) => const BarraPesquisa(),
+
+        
+
       },
     );
   }
