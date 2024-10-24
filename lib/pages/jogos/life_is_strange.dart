@@ -34,12 +34,17 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
                   child: const Text(
                     "Life is Strange: Remastered Collection",
-                    style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'DaysOne'),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22,
+                      fontFamily: 'DaysOne',
+                    ),
                   ),
                 ),
               ),
               backgroundColor: Colors.transparent, // Faz o AppBar também ser transparente
               elevation: 0,
+              toolbarHeight: 80, // Ajusta a altura do AppBar
             ),
             body: Center(
               child: Container(
@@ -48,11 +53,8 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                   mainAxisSize: MainAxisSize.min, // Ajusta a altura da coluna de acordo com o conteúdo
                   children: [
                     SizedBox(
-                      width: 375,
-                      height: 375,
                       child: Image.asset(
                         'assets/image/jogo_lifeStrange/lifeStrange.png',
-                        fit: BoxFit.cover, // Ajusta a imagem para cobrir a área, mantendo a proporção
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -65,6 +67,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'DaysOne',
                           ),
                           ),
                             Icon(
@@ -85,10 +88,27 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Data de Lançamento: 30/Set/2015',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                      Text.rich(
+                        TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'Data de Lançamento: ', // Parte que ficará em negrito
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold, // Negrito
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '30/Set/2015', // Parte que ficará normal
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
                         ),
+                      ),
                         Row(
 
                         ),
@@ -97,17 +117,52 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                     const SizedBox(height: 10),
                     const Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Distribuidora: Square Enix',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
+
+                      child: Text.rich(
+                        TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'Distribuidora: ', // Parte que ficará em negrito
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold, // Negrito
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'Square Enix', // Parte que ficará normal
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(height: 10),
-                    const Text(
-                      'Sinopse: Acompanhe Max Caulfield, uma jovem estudante de fotografia, que descobre a habilidade de voltar no tempo e deve usá-la para evitar uma tragédia iminente, enquanto enfrenta dilemas emocionais e escolhas difíceis.',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                      textAlign: TextAlign.justify,
-                    ),
+
+                        const Text.rich(
+                        TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'Sinopse: ', // Parte que ficará em negrito
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold, // Negrito
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'Acompanhe Max Caulfield, uma jovem estudante de fotografia, que descobre a habilidade de voltar no tempo e deve usá-la para evitar uma tragédia iminente, enquanto enfrenta dilemas emocionais e escolhas difíceis.', // Parte que ficará normal
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     const SizedBox(height: 20),
                     // Botões
                     Column(
@@ -116,19 +171,20 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green, // Cor de fundo verde
+                            backgroundColor: const Color.fromARGB(255, 41, 144, 43), // Cor de fundo verde
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20), // Bordas arredondadas
-                              side: const BorderSide(color: Color.fromARGB(36, 75, 36, 255), width: 6), // Borda branca
-
+                              borderRadius: BorderRadius.circular(50), // Bordas arredondadas
+                              side: const BorderSide(color: Color.fromARGB(255, 51, 84, 60), width: 6), // Borda branca
+                              
                             ),
-                            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15), // Tamanho do botão
+                            padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 15), // Tamanho do botão
                           ),
                           child: const Text(
                             'JOGAR',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.white, // Cor do texto branco
+                              fontFamily: 'DaynsOne'
                             ),
                           ),
                         ),
@@ -140,7 +196,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                           style: OutlinedButton.styleFrom(
                             side: const BorderSide(color: Colors.white, width: 5), // Borda branca
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20), // Bordas arredondadas
+                              borderRadius: BorderRadius.circular(50), // Bordas arredondadas
                             ),
                             padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15), // Tamanho do botão
                           ),

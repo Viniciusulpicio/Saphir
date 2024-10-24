@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/jogos/stardew_valley.dart';
 import 'package:saphir/shared/style.dart';
 
 import 'package:saphir/pages/splash.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/lifeIs' : (context) =>  const LifeIsStrange(),
         '/redDead' : (context) => const RedDead(),
         '/starWars' : (context) => const StarWars(),
+        '/stardewValley' : (context) => const StardewValley(),
         '/novaSenha' : (context) => const NovaSenha(),
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
