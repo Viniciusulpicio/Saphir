@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -81,7 +80,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                             return "O e-mail não é valido";
                           }
                           return null;
-                        }, // Para ocultar a senha
+                        }, 
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -110,6 +109,15 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30)),
                                 borderSide: BorderSide.none)),
+                        validator: (String? senha) {
+                          if (senha == null || senha.isEmpty) {
+                            return "A senha não pode estar vazia";
+                          }
+                          if (senha.length < 8) {
+                            return "A senha deve ter pelo menos 8 caracteres";
+                          }
+                          return null;
+                        },
                       ),
                     ),
                     Padding(
@@ -237,6 +245,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       ),
     );
   }
+
 
 void buttonEnterClick() {
   if (_formKey.currentState!.validate()) {
