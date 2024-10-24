@@ -34,7 +34,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
                   child: const Text(
                     "Life is Strange: Remastered Collection",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+                    style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'DaysOne'),
                   ),
                 ),
               ),
