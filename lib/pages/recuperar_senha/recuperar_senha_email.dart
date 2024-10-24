@@ -28,6 +28,8 @@ class _MyWidgetState extends State<RecuperarSenhaEmail> {
                   fontFamily: 'DaysOne',
                 ),
               ),
+              Row( crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               const Text("Digite o email de recuperação:",
                   style: TextStyle(color: Colors.white)),
               Padding(
