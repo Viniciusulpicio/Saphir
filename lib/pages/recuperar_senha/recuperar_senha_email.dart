@@ -35,7 +35,6 @@ class _MyWidgetState extends State<RecuperarSenhaEmail> {
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30.0),
                   child: TextFormField(
-                      autocorrect: false,
                       autofocus: false,
                       decoration: const InputDecoration(
                           filled: true, // Preenche o fundo
@@ -46,7 +45,7 @@ class _MyWidgetState extends State<RecuperarSenhaEmail> {
                           border: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30)),
-                              borderSide: BorderSide.none)))),
+                              borderSide: BorderSide.none))))]),
               Center(
                 child: ElevatedButton(
                   onPressed: () {
