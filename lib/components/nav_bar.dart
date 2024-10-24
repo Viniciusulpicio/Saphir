@@ -17,24 +17,30 @@ class navBar extends StatelessWidget {
         child: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: (index) {
+            if (index == currentIndex) {
+              // Se o índice atual for o mesmo, não faça nada
+              return;
+            }
+
+            // Se for uma nova página, chame a função de navegação
             onTap(index);
 
-            // Definindo a navegação com base no índice
+            // Navegação
             switch (index) {
               case 0:
-                Navigator.pushNamed(context, '/home');
+                Navigator.pushReplacementNamed(context, '/home');
                 break;
               case 1:
-                Navigator.pushNamed(context, '/salvos');
+                Navigator.pushReplacementNamed(context, '/salvos');
                 break;
               case 2:
-                Navigator.pushNamed(context, '/listas');
+                Navigator.pushReplacementNamed(context, '/listas');
                 break;
               case 3:
-                Navigator.pushNamed(context, '/configuracao');
+                Navigator.pushReplacementNamed(context, '/configuracao');
                 break;
               default:
-                Navigator.pushNamed(context, '/home'); // Rota padrão se o índice não for mapeado
+                Navigator.pushReplacementNamed(context, '/home');
             }
           },
           items: <BottomNavigationBarItem>[

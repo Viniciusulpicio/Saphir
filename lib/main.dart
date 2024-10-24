@@ -14,6 +14,7 @@ import 'package:saphir/pages/jogos/star_wars.dart';
 import 'package:saphir/pages/recuperar_senha/nova_senha.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_codigo.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_email.dart';
+import 'package:saphir/components/barra_pesquisa.dart';
 
 
 void main() {
@@ -34,9 +35,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/",
+      initialRoute: "/home",
       routes: {
-        '/' : (context) => const Splash(),
+        // '/' : (context) => const Splash(),
         '/login' : (context) => const Login(),
         '/cadastro' : (context) => const Cadastro(),
         '/home' : (context) => const Home(),
@@ -49,6 +50,10 @@ class MyApp extends StatelessWidget {
         '/novaSenha' : (context) => const NovaSenha(),
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
+        '/barraPesuisa' : (context) => const BarraPesquisa(),
+
+        
+
       },
     );
   }
