@@ -124,15 +124,15 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       padding: const EdgeInsets.only(right: 40),
                       child: Align(
                         alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {
-                            // Função de esquecimento de senha
-                          },
-                          child: const Text(
-                            "Esqueceu a senha?",
-                            style: TextStyle(color: Colors.blue),
+                          child: GestureDetector(
+                            child: const Text(
+                              "Esqueceu a senha?",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                            onTap: () {
+                              Navigator.pushNamed(context, "/recuperarEmail");
+                            },
                           ),
-                        ),
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -163,7 +163,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/login/facebook.png'),
+                            child:
+                                Image.asset('assets/image/login/facebook.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -246,13 +247,12 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     );
   }
 
-
-void buttonEnterClick() {
-  if (_formKey.currentState!.validate()) {
-    Navigator.pushNamed(context, '/home');
-  } else {
-    print("form erro");
+  void buttonEnterClick() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, '/home');
+    } else {
+      print("form erro");
+    }
   }
 }
 
-}
