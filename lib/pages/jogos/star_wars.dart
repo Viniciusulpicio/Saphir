@@ -54,7 +54,7 @@ class _StarWarsState extends State<StarWars> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogo_starWars/star_wars.png',
+                        'assets/image/jogos/legoStarWars.png',
                       ),
                     ),
                     const SizedBox(height: 20),

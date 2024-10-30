@@ -54,7 +54,7 @@ class _RedDeadState extends State<RedDead> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogo_redDead/red_dead.png',
+                        'assets/image/jogos/redDead2.png',
                       ),
                     ),
                     const SizedBox(height: 20),

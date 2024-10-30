@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:saphir/shared/style.dart';
 import 'package:saphir/components/nav_bar.dart';
 
-class LifeIsStrange extends StatefulWidget {
-  const LifeIsStrange({super.key});
+class LegoCity extends StatefulWidget {
+  const LegoCity({super.key});
 
   @override
-  State<LifeIsStrange> createState() => _LifeIsStrangeState();
+  State<LegoCity> createState() => _LegoCityState();
 }
 
-class _LifeIsStrangeState extends State<LifeIsStrange> {
+class _LegoCityState extends State<LegoCity> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -33,7 +33,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
                   child: const Text(
-                    "Life is Strange: Remastered Collection",
+                    "LEGO® CITY Undercover",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -54,7 +54,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogos/lifeStrange.png',
+                        'assets/image/jogos/legoCity.png',
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -62,7 +62,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                     const Row(
                       children: [
                         Text(
-                          'Life is Strange: Re...',
+                          'LEGO® CITY Undercover',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -77,7 +77,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                             ),
                             SizedBox(width: 5),
                             Text(
-                              '8,5/10',
+                              '8,2/10',
                               style: TextStyle(color: Colors.white, fontSize: 16),
                             ),
                           
@@ -100,7 +100,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                               ),
                             ),
                             TextSpan(
-                              text: '30/Set/2015', // Parte que ficará normal
+                              text: '2017 ', // Parte que ficará normal
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -130,7 +130,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                               ),
                             ),
                             TextSpan(
-                              text: 'Square Enix', // Parte que ficará normal
+                              text: ' Warner Bros. Entertainment', // Parte que ficará normal
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -154,7 +154,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                               ),
                             ),
                             TextSpan(
-                              text: 'Acompanhe Max Caulfield, uma jovem estudante de fotografia, que descobre a habilidade de voltar no tempo e deve usá-la para evitar uma tragédia iminente, enquanto enfrenta dilemas emocionais e escolhas difíceis.', // Parte que ficará normal
+                              text: ' Siga o policial Chase McCain em uma missão de mundo aberto para capturar o infame criminoso Rex Fury, enquanto explora a cidade de LEGO® City repleta de ação e humor.', // Parte que ficará normal
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,

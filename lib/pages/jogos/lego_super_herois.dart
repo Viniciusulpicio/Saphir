@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:saphir/shared/style.dart';
 import 'package:saphir/components/nav_bar.dart';
 
-class LifeIsStrange extends StatefulWidget {
-  const LifeIsStrange({super.key});
+class LegoSuperHerois extends StatefulWidget {
+  const LegoSuperHerois({super.key});
 
   @override
-  State<LifeIsStrange> createState() => _LifeIsStrangeState();
+  State<LegoSuperHerois> createState() => _LegoSuperHeroisState();
 }
 
-class _LifeIsStrangeState extends State<LifeIsStrange> {
+class _LegoSuperHeroisState extends State<LegoSuperHerois> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -33,7 +33,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
                   child: const Text(
-                    "Life is Strange: Remastered Collection",
+                    "LEGO® Marvel™ Super Heroes",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -54,7 +54,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogos/lifeStrange.png',
+                        'assets/image/jogos/legoMarvel.png',
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -62,7 +62,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                     const Row(
                       children: [
                         Text(
-                          'Life is Strange: Re...',
+                          'LEGO® Marvel™ Super Heroes',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -77,7 +77,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                             ),
                             SizedBox(width: 5),
                             Text(
-                              '8,5/10',
+                              '7,9/10',
                               style: TextStyle(color: Colors.white, fontSize: 16),
                             ),
                           
@@ -100,7 +100,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                               ),
                             ),
                             TextSpan(
-                              text: '30/Set/2015', // Parte que ficará normal
+                              text: '2013 ', // Parte que ficará normal
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -130,7 +130,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                               ),
                             ),
                             TextSpan(
-                              text: 'Square Enix', // Parte que ficará normal
+                              text: ' Warner Bros. Entertainment', // Parte que ficará normal
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -154,7 +154,7 @@ class _LifeIsStrangeState extends State<LifeIsStrange> {
                               ),
                             ),
                             TextSpan(
-                              text: 'Acompanhe Max Caulfield, uma jovem estudante de fotografia, que descobre a habilidade de voltar no tempo e deve usá-la para evitar uma tragédia iminente, enquanto enfrenta dilemas emocionais e escolhas difíceis.', // Parte que ficará normal
+                              text: 'Junte-se aos super-heróis da Marvel, como Homem de Ferro, Hulk, Thor, e outros, em uma batalha épica para salvar o mundo de vilões poderosos como Loki e Galactus, numa experiência cheia de ação e humor no universo LEGO®.', // Parte que ficará normal
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,

@@ -17,13 +17,13 @@ class navBar extends StatelessWidget {
         child: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: (index) {
-            if (index == currentIndex) {
+          if (index == currentIndex && index != 0) {
               // Se o índice atual for o mesmo, não faça nada
               return;
             }
+            debugPrint('Navegando para a página de índice: $index');
 
-            // Se for uma nova página, chame a função de navegação
-            onTap(index);
+
 
             // Navegação
             switch (index) {
@@ -42,7 +42,11 @@ class navBar extends StatelessWidget {
               default:
                 Navigator.pushReplacementNamed(context, '/home');
             }
+                        // Se for uma nova página, chame a função de navegação
+            onTap(index);
           },
+
+          
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Padding(

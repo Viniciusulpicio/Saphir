@@ -54,7 +54,7 @@ class _StarWarsState extends State<StardewValley> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogo_stardew/stardew_valley.png',
+                        'assets/image/jogos/stardewValley.png',
                       ),
                     ),
                     const SizedBox(height: 20),
