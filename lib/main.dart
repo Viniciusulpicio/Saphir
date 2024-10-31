@@ -17,6 +17,7 @@ import 'package:saphir/pages/jogos/the_sims2.dart';
 import 'package:saphir/pages/jogos/the_sims4.dart';
 import 'package:saphir/pages/luta.dart';
 import 'package:saphir/pages/rpg.dart';
+import 'package:saphir/pages/salvos.dart';
 import 'package:saphir/pages/simulacao.dart';
 import 'package:saphir/pages/terror.dart';
 import 'package:saphir/shared/style.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/home",
+      initialRoute: "/salvos",
       routes: {
         // '/' : (context) => const Splash(),
         '/login' : (context) => const Login(),
@@ -64,6 +65,7 @@ class MyApp extends StatelessWidget {
         '/novaSenha' : (context) => const NovaSenha(),
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
+        '/salvos' : (context) => const Salvos(),
         '/acao' : (context) => const Acao(),
         '/casual' : (context) => const Casual(),
         '/luta' : (context) => const Luta(),

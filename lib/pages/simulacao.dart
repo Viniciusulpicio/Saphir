@@ -74,7 +74,7 @@ class _SimulacaoState extends State<Simulacao> {
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto
 
                 Container(
-                  margin: const EdgeInsets.only(left: 45.0), // Alinhado com o grid
+                  margin: const EdgeInsets.only(left: 45.0,), // Alinhado com o grid
                   alignment: Alignment.centerLeft,
                   child: const Text(
                     'PRINCIPAIS TÍTULOS: ',                     
