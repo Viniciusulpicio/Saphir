@@ -17,12 +17,12 @@ class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   final List<Map<String, dynamic>> categories = [
-    {'image': 'assets/image/home/acao.png', 'route': '/acaoPage'},
-    {'image': 'assets/image/home/casual.png', 'route': '/casualPage'},
-    {'image': 'assets/image/home/rpg.png', 'route': '/rpgPage'},
-    {'image': 'assets/image/home/terror.png', 'route': '/terrorPage'},
-    {'image': 'assets/image/home/simulacao.png', 'route': '/simulacaoPage'},
-    {'image': 'assets/image/home/luta.png', 'route': '/lutaPage'},
+    {'image': 'assets/image/home/acao.png', 'route': '/acao'},
+    {'image': 'assets/image/home/casual.png', 'route': '/casual'},
+    {'image': 'assets/image/home/rpg.png', 'route': '/rpg'},
+    {'image': 'assets/image/home/terror.png', 'route': '/terror'},
+    {'image': 'assets/image/home/simulacao.png', 'route': '/simulacao'},
+    {'image': 'assets/image/home/luta.png', 'route': '/luta'},
   ];
 
       final List<Map<String, dynamic>> imgList = [
@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                       return GestureDetector(
                         onTap: () {
                           // Navegar para a página específica da categoria
-                          Navigator.pushNamed(context, category['route']);
+                          Navigator.pushReplacementNamed(context, category['route']);
                         },
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),

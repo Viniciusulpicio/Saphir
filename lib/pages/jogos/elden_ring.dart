@@ -32,12 +32,14 @@ class _EldenRingState extends State<EldenRing> {
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
-                  child: const Text(
-                    "Elden Ring",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontFamily: 'DaysOne',
+                  child: Center(
+                    child: const Text(
+                      "Elden Ring",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontFamily: 'DaysOne',
+                      ),
                     ),
                   ),
                 ),

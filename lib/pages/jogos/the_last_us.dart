@@ -62,7 +62,7 @@ class _TheLastUsState extends State<TheLastUs> {
                     const Row(
                       children: [
                         Text(
-                          'The Last Of Us Part II Remastered',
+                          'The Last Of Us Par...',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,

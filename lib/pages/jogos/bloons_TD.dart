@@ -45,6 +45,8 @@ class _BloonsTdState extends State<BloonsTd> {
               backgroundColor: Colors.transparent, // Faz o AppBar também ser transparente
               elevation: 0,
               toolbarHeight: 80, // Ajusta a altura do AppBar
+                iconTheme: const IconThemeData(color: Colors.white), // Define a cor da setinha de voltar
+
             ),
             body: Center(
               child: Container(
@@ -54,22 +56,24 @@ class _BloonsTdState extends State<BloonsTd> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogos/bloondTD.png',
+                        'assets/image/jogos/bloonsTD.png',
                       ),
                     ),
                     const SizedBox(height: 20),
                     // Título e informações do jogo
                     const Row(
                       children: [
-                        Text(
-                          'Bloons TD 6',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'DaysOne',
-                          ),
-                          ),
+                        Center(
+                          child: Text(
+                            'Bloons TD 6',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'DaysOne',
+                            ),
+                            ),
+                        ),
                             Icon(
                               Icons.star,
                               color: Colors.yellow,

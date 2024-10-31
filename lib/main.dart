@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/acao.dart';
+import 'package:saphir/pages/casual.dart';
 import 'package:saphir/pages/jogos/bloons_TD.dart';
 import 'package:saphir/pages/jogos/elden_ring.dart';
 import 'package:saphir/pages/jogos/elder_scrolls.dart';
@@ -13,6 +15,10 @@ import 'package:saphir/pages/jogos/stardew_valley.dart';
 import 'package:saphir/pages/jogos/the_last_us.dart';
 import 'package:saphir/pages/jogos/the_sims2.dart';
 import 'package:saphir/pages/jogos/the_sims4.dart';
+import 'package:saphir/pages/luta.dart';
+import 'package:saphir/pages/rpg.dart';
+import 'package:saphir/pages/simulacao.dart';
+import 'package:saphir/pages/terror.dart';
 import 'package:saphir/shared/style.dart';
 
 import 'package:saphir/pages/splash.dart';
@@ -47,18 +53,23 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/",
+      initialRoute: "/home",
       routes: {
-        '/' : (context) => const Splash(),
+        // '/' : (context) => const Splash(),
         '/login' : (context) => const Login(),
         '/cadastro' : (context) => const Cadastro(),
         '/home' : (context) => const Home(),
         '/configuracao' : (context) => const Configuracao(),
         '/conta' : (context) => const Conta(),
-        '/stardewValley' : (context) => const StardewValley(),
         '/novaSenha' : (context) => const NovaSenha(),
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
+        '/acao' : (context) => const Acao(),
+        '/casual' : (context) => const Casual(),
+        '/luta' : (context) => const Luta(),
+        '/rpg' : (context) => const Rpg(),
+        '/simulacao' : (context) => const Simulacao(),
+        '/terror' : (context) => const Terror(),
 
         // jogos
         '/lifeIs' : (context) =>  const LifeIsStrange(),
@@ -73,6 +84,7 @@ class MyApp extends StatelessWidget {
         '/mineirinhoUltra' : (context) => const MineirinhoUltra(),
         '/mortalKombat' : (context) => const MortalKombat(),
         '/outlast' : (context) => const Outlast(),        
+        '/stardewValley' : (context) => const StardewValley(),
         '/silentHill' : (context) => const SilentHill(),
         '/theLastUs' : (context) => const TheLastUs(),       
         '/theSims2' : (context) => const TheSims2(),

@@ -32,12 +32,14 @@ class _MortalKombatState extends State<MortalKombat> {
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
-                  child: const Text(
-                    "Mortal Kombat 1",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontFamily: 'DaysOne',
+                  child: Center(
+                    child: const Text(
+                      "Mortal Kombat 1",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontFamily: 'DaysOne',
+                      ),
                     ),
                   ),
                 ),
