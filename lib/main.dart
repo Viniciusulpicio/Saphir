@@ -16,8 +16,10 @@ import 'package:saphir/pages/jogos/the_last_us.dart';
 import 'package:saphir/pages/jogos/the_sims2.dart';
 import 'package:saphir/pages/jogos/the_sims4.dart';
 import 'package:saphir/pages/luta.dart';
+import 'package:saphir/pages/novidades.dart';
 import 'package:saphir/pages/rpg.dart';
 import 'package:saphir/pages/salvos.dart';
+import 'package:saphir/pages/selecioneConta.dart';
 import 'package:saphir/pages/simulacao.dart';
 import 'package:saphir/pages/terror.dart';
 import 'package:saphir/shared/style.dart';
@@ -54,7 +56,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/salvos",
+      initialRoute: "/selecioneConta",
       routes: {
         // '/' : (context) => const Splash(),
         '/login' : (context) => const Login(),
@@ -66,12 +68,15 @@ class MyApp extends StatelessWidget {
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
         '/salvos' : (context) => const Salvos(),
+        '/novidade' : (context) => const Novidades(),
         '/acao' : (context) => const Acao(),
         '/casual' : (context) => const Casual(),
         '/luta' : (context) => const Luta(),
         '/rpg' : (context) => const Rpg(),
         '/simulacao' : (context) => const Simulacao(),
         '/terror' : (context) => const Terror(),
+        '/selecioneConta' : (context) => const Selecioneconta(),
+
 
         // jogos
         '/lifeIs' : (context) =>  const LifeIsStrange(),

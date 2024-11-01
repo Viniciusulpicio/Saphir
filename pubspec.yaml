@@ -90,6 +90,7 @@ flutter:
     - assets/image/simulacao/
     - assets/image/terror/
     - assets/image/salvos/
+    - assets/image/selecioneConta/
 
 
   #   - images/a_dot_ham.jpeg
