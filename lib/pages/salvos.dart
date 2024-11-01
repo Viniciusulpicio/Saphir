@@ -18,60 +18,68 @@ class _SalvosState extends State<Salvos> {
       _selectedIndex = index;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          color: const Color.fromARGB(255, 0, 8, 2), // Fundo preto por trás do gradiente
+          color: const Color.fromARGB(
+              255, 0, 8, 2), // Fundo preto por trás do gradiente
         ),
         GradientBackground(
           child: Scaffold(
-            backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
+            backgroundColor: Colors
+                .transparent, // Torna o fundo transparente para o gradiente aparecer
 
-          appBar: AppBar(
-            title: const Padding(
-              padding: EdgeInsets.only(top: 20.0), // Ajuste o valor de top conforme necessário
-              child: Text(
-                "Salvos",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22,
-                  fontFamily: 'DaysOne',
+            appBar: AppBar(
+              title: const Padding(
+                padding: EdgeInsets.only(
+                    top: 20.0), // Ajuste o valor de top conforme necessário
+                child: Text(
+                  "Salvos",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontFamily: 'DaysOne',
+                  ),
                 ),
               ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 80,
+              centerTitle: true,
             ),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: 80,
-            centerTitle: true,
-          ),
 
             body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 45.0), // Define margem de 45 à direita e à esquerda
+              padding: const EdgeInsets.symmetric(
+                  horizontal:
+                      45.0), // Define margem de 45 à direita e à esquerda
               child: Column(
                 children: [
                   SizedBox(height: 10),
-              
+
                   Container(
                     child: BarraPesquisaWidget(),
                   ),
-              
+
                   SizedBox(height: 45), // Espaço entre a imagem e o texto
 
                   GestureDetector(
-                      onTap: () {
-                         Navigator.pushReplacementNamed(context, '/bloondTD');
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/bloondTD');
                     },
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
-                      crossAxisAlignment: CrossAxisAlignment.center, // Alinha o conteúdo verticalmente ao centro
+                      mainAxisAlignment: MainAxisAlignment
+                          .center, // Centraliza todo o conteúdo no Row
+                      crossAxisAlignment: CrossAxisAlignment
+                          .center, // Alinha o conteúdo verticalmente ao centro
                       children: [
                         Image.asset(
                           "assets/image/salvos/bloonsTD.png",
                         ),
-                        const SizedBox(width: 10), // Espaço entre a imagem e o texto
+                        const SizedBox(
+                            width: 10), // Espaço entre a imagem e o texto
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,18 +87,17 @@ class _SalvosState extends State<Salvos> {
                             Text(
                               "Bloons TD 6",
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: "DaysOne"
-                              ),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: "DaysOne"),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Última sessão: ', // Parte que ficará em negrito
+                                    text:
+                                        'Última sessão: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -98,7 +105,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: 'há 13 dias', // Parte que ficará normal
+                                    text:
+                                        'há 13 dias', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -107,12 +115,12 @@ class _SalvosState extends State<Salvos> {
                                 ],
                               ),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Tempo jogado: ', // Parte que ficará em negrito
+                                    text:
+                                        'Tempo jogado: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -120,7 +128,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '25,8 horas', // Parte que ficará normal
+                                    text:
+                                        '25,8 horas', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -137,18 +146,21 @@ class _SalvosState extends State<Salvos> {
 
                   SizedBox(height: 30),
 
-                    GestureDetector(
-                      onTap: () {
-                         Navigator.pushReplacementNamed(context, '/lifeIs');
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/lifeIs');
                     },
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
-                      crossAxisAlignment: CrossAxisAlignment.center, // Alinha o conteúdo verticalmente ao centro
+                      mainAxisAlignment: MainAxisAlignment
+                          .center, // Centraliza todo o conteúdo no Row
+                      crossAxisAlignment: CrossAxisAlignment
+                          .center, // Alinha o conteúdo verticalmente ao centro
                       children: [
                         Image.asset(
                           "assets/image/salvos/lifeStrange.png",
                         ),
-                        const SizedBox(width: 10), // Espaço entre a imagem e o texto
+                        const SizedBox(
+                            width: 10), // Espaço entre a imagem e o texto
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,18 +168,17 @@ class _SalvosState extends State<Salvos> {
                             Text(
                               "Life is Strange",
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: "DaysOne"
-                              ),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: "DaysOne"),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Última sessão: ', // Parte que ficará em negrito
+                                    text:
+                                        'Última sessão: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -175,7 +186,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '23 de Julho', // Parte que ficará normal
+                                    text:
+                                        '23 de Julho', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -184,12 +196,12 @@ class _SalvosState extends State<Salvos> {
                                 ],
                               ),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Tempo jogado: ', // Parte que ficará em negrito
+                                    text:
+                                        'Tempo jogado: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -197,84 +209,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '10,3 horas', // Parte que ficará normal
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-
-                      SizedBox(height: 30),
-
-                    GestureDetector(
-                      onTap: () {
-                         Navigator.pushReplacementNamed(context, '/stardewValley');
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
-                      crossAxisAlignment: CrossAxisAlignment.center, // Alinha o conteúdo verticalmente ao centro
-                      children: [
-                        Image.asset(
-                          "assets/image/salvos/stardewValley.png",
-                        ),
-                        const SizedBox(width: 10), // Espaço entre a imagem e o texto
-                        const Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Stardew Valley",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: "DaysOne"
-                              ),
-                            ),
-
-                            Text.rich(
-                              TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: 'Última sessão: ', // Parte que ficará em negrito
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold, // Negrito
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: '22 de Abril', // Parte que ficará normal
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-
-                            Text.rich(
-                              TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: 'Tempo jogado: ', // Parte que ficará em negrito
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold, // Negrito
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: '584,9 horas', // Parte que ficará normal
+                                    text:
+                                        '10,3 horas', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -291,18 +227,102 @@ class _SalvosState extends State<Salvos> {
 
                   SizedBox(height: 30),
 
-                    GestureDetector(
-                      onTap: () {
-                         Navigator.pushReplacementNamed(context, '/elderScrolls');
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/stardewValley');
                     },
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
-                      crossAxisAlignment: CrossAxisAlignment.center, // Alinha o conteúdo verticalmente ao centro
+                      mainAxisAlignment: MainAxisAlignment
+                          .center, // Centraliza todo o conteúdo no Row
+                      crossAxisAlignment: CrossAxisAlignment
+                          .center, // Alinha o conteúdo verticalmente ao centro
+                      children: [
+                        Image.asset(
+                          "assets/image/salvos/stardewValley.png",
+                        ),
+                        const SizedBox(
+                            width: 10), // Espaço entre a imagem e o texto
+                        const Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Stardew Valley",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: "DaysOne"),
+                            ),
+                            Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text:
+                                        'Última sessão: ', // Parte que ficará em negrito
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold, // Negrito
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text:
+                                        '22 de Abril', // Parte que ficará normal
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text.rich(
+                              TextSpan(
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text:
+                                        'Tempo jogado: ', // Parte que ficará em negrito
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold, // Negrito
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text:
+                                        '584,9 horas', // Parte que ficará normal
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(height: 30),
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/elderScrolls');
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment
+                          .center, // Centraliza todo o conteúdo no Row
+                      crossAxisAlignment: CrossAxisAlignment
+                          .center, // Alinha o conteúdo verticalmente ao centro
                       children: [
                         Image.asset(
                           "assets/image/salvos/elderScrolls.png",
                         ),
-                        const SizedBox(width: 10), // Espaço entre a imagem e o texto
+                        const SizedBox(
+                            width: 10), // Espaço entre a imagem e o texto
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -310,18 +330,17 @@ class _SalvosState extends State<Salvos> {
                             Text(
                               "The Elder Scroll...",
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: "DaysOne"
-                              ),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: "DaysOne"),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Última sessão: ', // Parte que ficará em negrito
+                                    text:
+                                        'Última sessão: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -329,7 +348,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '15 de Junho', // Parte que ficará normal
+                                    text:
+                                        '15 de Junho', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -338,12 +358,12 @@ class _SalvosState extends State<Salvos> {
                                 ],
                               ),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Tempo jogado: ', // Parte que ficará em negrito
+                                    text:
+                                        'Tempo jogado: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -351,7 +371,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '34,7 horas', // Parte que ficará normal
+                                    text:
+                                        '34,7 horas', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -366,20 +387,23 @@ class _SalvosState extends State<Salvos> {
                     ),
                   ),
 
-                                    SizedBox(height: 30),
+                  SizedBox(height: 30),
 
-                    GestureDetector(
-                      onTap: () {
-                         Navigator.pushReplacementNamed(context, '/theSims4');
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/theSims4');
                     },
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
-                      crossAxisAlignment: CrossAxisAlignment.center, // Alinha o conteúdo verticalmente ao centro
+                      mainAxisAlignment: MainAxisAlignment
+                          .center, // Centraliza todo o conteúdo no Row
+                      crossAxisAlignment: CrossAxisAlignment
+                          .center, // Alinha o conteúdo verticalmente ao centro
                       children: [
                         Image.asset(
                           "assets/image/salvos/theSims4.png",
                         ),
-                        const SizedBox(width: 10), // Espaço entre a imagem e o texto
+                        const SizedBox(
+                            width: 10), // Espaço entre a imagem e o texto
                         const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -387,18 +411,17 @@ class _SalvosState extends State<Salvos> {
                             Text(
                               "The Sims 4",
                               style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: "DaysOne"
-                              ),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: "DaysOne"),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Última sessão: ', // Parte que ficará em negrito
+                                    text:
+                                        'Última sessão: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -406,7 +429,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: 'há 2 dias', // Parte que ficará normal
+                                    text:
+                                        'há 2 dias', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -415,12 +439,12 @@ class _SalvosState extends State<Salvos> {
                                 ],
                               ),
                             ),
-
                             Text.rich(
                               TextSpan(
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: 'Tempo jogado: ', // Parte que ficará em negrito
+                                    text:
+                                        'Tempo jogado: ', // Parte que ficará em negrito
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold, // Negrito
                                       color: Colors.white,
@@ -428,7 +452,8 @@ class _SalvosState extends State<Salvos> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: '2149,3 horas', // Parte que ficará normal
+                                    text:
+                                        '2149,3 horas', // Parte que ficará normal
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
@@ -442,7 +467,6 @@ class _SalvosState extends State<Salvos> {
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
