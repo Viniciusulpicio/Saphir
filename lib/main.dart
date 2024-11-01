@@ -22,6 +22,8 @@ import 'package:saphir/pages/salvos.dart';
 import 'package:saphir/pages/selecioneConta.dart';
 import 'package:saphir/pages/simulacao.dart';
 import 'package:saphir/pages/terror.dart';
+import 'package:saphir/pages/video/star_wars_video.dart';
+import 'package:saphir/pages/video/stardew_valley_video.dart';
 import 'package:saphir/shared/style.dart';
 
 import 'package:saphir/pages/splash.dart';
@@ -56,9 +58,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/selecioneConta",
+      initialRoute: "/",
       routes: {
-        // '/' : (context) => const Splash(),
+        '/' : (context) => const Splash(),
         '/login' : (context) => const Login(),
         '/cadastro' : (context) => const Cadastro(),
         '/home' : (context) => const Home(),
@@ -97,6 +99,9 @@ class MyApp extends StatelessWidget {
         '/theSims2' : (context) => const TheSims2(),
         '/theSims4' : (context) => const TheSims4(),
 
+
+        '/videoStardew' : (context) =>  StardewValleyVideo(), 
+        '/videoStarWars' : (context) =>  StarWarsVideo(),
       },
     );
   }

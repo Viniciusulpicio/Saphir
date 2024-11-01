@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   carousel_slider: ^5.0.0
+  video_player: ^2.9.2
 
 
 
@@ -91,6 +92,7 @@ flutter:
     - assets/image/terror/
     - assets/image/salvos/
     - assets/image/selecioneConta/
+    - assets/video/
 
 
   #   - images/a_dot_ham.jpeg
