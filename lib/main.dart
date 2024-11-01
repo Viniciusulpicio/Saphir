@@ -18,10 +18,14 @@ import 'package:saphir/pages/jogos/the_last_us.dart';
 import 'package:saphir/pages/jogos/the_sims2.dart';
 import 'package:saphir/pages/jogos/the_sims4.dart';
 import 'package:saphir/pages/luta.dart';
+import 'package:saphir/pages/novidades.dart';
 import 'package:saphir/pages/rpg.dart';
 import 'package:saphir/pages/salvos.dart';
+import 'package:saphir/pages/selecioneConta.dart';
 import 'package:saphir/pages/simulacao.dart';
 import 'package:saphir/pages/terror.dart';
+import 'package:saphir/pages/video/star_wars_video.dart';
+import 'package:saphir/pages/video/stardew_valley_video.dart';
 import 'package:saphir/shared/style.dart';
 
 import 'package:saphir/pages/splash.dart';
@@ -54,6 +58,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: MyColors.azulEscuro),
         useMaterial3: true,
       ),
+
       initialRoute: "/amigos",
       routes: {
         // '/' : (context) => const Splash(),

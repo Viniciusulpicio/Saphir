@@ -34,7 +34,7 @@ class navBar extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, '/salvos');
                 break;
               case 2:
-                Navigator.pushReplacementNamed(context, '/listas');
+                Navigator.pushReplacementNamed(context, '/novidade');
                 break;
               case 3:
                 Navigator.pushReplacementNamed(context, '/configuracao');
@@ -74,7 +74,7 @@ class navBar extends StatelessWidget {
               icon: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0), // Espaçamento entre os itens
                 child: Image.asset(
-                  'assets/image/nav_bar/lista.png',
+                  'assets/image/nav_bar/fire.png',
                   width: 24,
                   height: 24,
                 ),

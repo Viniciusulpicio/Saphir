@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/video/star_wars_video.dart';
 import 'package:saphir/shared/style.dart';
 import 'package:saphir/components/nav_bar.dart';
 
@@ -180,14 +181,23 @@ class _StarWarsState extends State<StarWars> {
                             ),
                             padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 15), // Tamanho do botão
                           ),
-                          child: const Text(
-                            'JOGAR',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white, // Cor do texto branco
-                              fontFamily: 'DaynsOne'
-                            ),
-                          ),
+                              child: GestureDetector(
+                                onTap: () {
+                                      Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => StarWarsVideo()),
+                                    );
+
+                                },
+                                child: const Text(
+                                  'JOGAR',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white, // Cor do texto branco
+                                    fontFamily: 'DaynsOne',
+                                  ),
+                                ),
+                              )
                         ),
                         const SizedBox(height: 10), // Espaço entre os botões
 
