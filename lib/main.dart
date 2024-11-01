@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saphir/pages/acao.dart';
+import 'package:saphir/pages/amigos.dart';
 import 'package:saphir/pages/casual.dart';
 import 'package:saphir/pages/editarPerfil.dart';
 import 'package:saphir/pages/jogos/bloons_TD.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: MyColors.azulEscuro),
         useMaterial3: true,
       ),
-      initialRoute: "/editarPerfil",
+      initialRoute: "/amigos",
       routes: {
         // '/' : (context) => const Splash(),
         '/login': (context) => const Login(),
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         '/simulacao': (context) => const Simulacao(),
         '/terror': (context) => const Terror(),
         '/editarPerfil': (context) => const Editarperfil(),
+        '/amigos': (context) => const Amigos(),
         // jogos
         '/lifeIs': (context) => const LifeIsStrange(),
         '/redDead': (context) => const RedDead(),
