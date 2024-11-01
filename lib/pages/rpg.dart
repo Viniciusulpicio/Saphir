@@ -46,6 +46,8 @@ class _RpgState extends State<Rpg> {
           child: Scaffold(       
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
+                              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+
               title: Row(
                 children: [
                   Expanded(
@@ -68,7 +70,7 @@ class _RpgState extends State<Rpg> {
                 GestureDetector(
                   child: Image.asset('assets/image/rpg/eldenRing.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, '/eldenRing'); // Navega para a rota
+                    Navigator.pushNamed(context, '/eldenRing'); // Navega para a rota
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto
@@ -95,7 +97,7 @@ class _RpgState extends State<Rpg> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
@@ -136,7 +138,7 @@ class _RpgState extends State<Rpg> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens

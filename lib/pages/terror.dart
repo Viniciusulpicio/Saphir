@@ -46,6 +46,8 @@ class _TerrorState extends State<Terror> {
           child: Scaffold(       
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
+                              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+
               title: Row(
                 children: [
                   Expanded(
@@ -68,7 +70,7 @@ class _TerrorState extends State<Terror> {
                 GestureDetector(
                   child: Image.asset('assets/image/terror/outlast.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, '/outlast'); // Navega para a rota
+                    Navigator.pushNamed(context, '/outlast'); // Navega para a rota
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto
@@ -95,7 +97,7 @@ class _TerrorState extends State<Terror> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
@@ -136,7 +138,7 @@ class _TerrorState extends State<Terror> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens

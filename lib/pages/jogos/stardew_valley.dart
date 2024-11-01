@@ -7,10 +7,10 @@ class StardewValley extends StatefulWidget {
   const StardewValley({super.key});
 
   @override
-  State<StardewValley> createState() => _StarWarsState();
+  State<StardewValley> createState() => _StardewValleyState();
 }
 
-class _StarWarsState extends State<StardewValley> {
+class _StardewValleyState extends State<StardewValley> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -21,19 +21,23 @@ class _StarWarsState extends State<StardewValley> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          color: const Color.fromARGB(255, 0, 8, 20), // Fundo preto por trás do gradiente
-        ),
-        GradientBackground(
-          child: Scaffold(
-            backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
-            appBar: AppBar(
-              title: Center(
-                child: Container(
-                  margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
-                  child: const Center(
+    return WillPopScope(
+      onWillPop: () async {
+        return true; // Permite o retorno
+      },
+      child: Stack(
+        children: [
+          Container(
+            color: const Color.fromARGB(255, 0, 8, 20),
+          ),
+          GradientBackground(
+            child: Scaffold(
+              backgroundColor: Colors.transparent,
+              appBar: AppBar(
+                automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+                title: const Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 40),
                     child: Text(
                       "Stardew Valley",
                       style: TextStyle(
@@ -44,198 +48,179 @@ class _StarWarsState extends State<StardewValley> {
                     ),
                   ),
                 ),
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                toolbarHeight: 80,
               ),
-              backgroundColor: Colors.transparent, // Faz o AppBar também ser transparente
-              elevation: 0,
-              toolbarHeight: 80, // Ajusta a altura do AppBar
-            ),
-            body: Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min, // Ajusta a altura da coluna de acordo com o conteúdo
-                  children: [
-                    SizedBox(
-                      child: Image.asset(
-                        'assets/image/jogos/stardewValley.png',
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    // Título e informações do jogo
-                    const Row(
-                      children: [
-                        Text(
-                          'Stardew Valley',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'DaysOne',
+              body: Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset('assets/image/jogos/stardewValley.png'),
+                      const SizedBox(height: 20),
+                      const Row(
+                        children: [
+                          Text(
+                            'Stardew Valley',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'DaysOne',
+                            ),
                           ),
+                          Icon(Icons.star, color: Colors.yellow, size: 20),
+                          SizedBox(width: 5),
+                          Text(
+                            '8,5/10',
+                            style: TextStyle(color: Colors.white, fontSize: 16),
                           ),
-                            Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                              size: 20,
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              '8,5/10',
-                              style: TextStyle(color: Colors.white, fontSize: 16),
-                            ),
-                          
-                        
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                      Text.rich(
-                        TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'Data de Lançamento: ', // Parte que ficará em negrito
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold, // Negrito
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                            TextSpan(
-                              text: '26/Fev/2016', // Parte que ficará normal
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
+                        ],
                       ),
-                        Row(
-
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    const Align(
-                      alignment: Alignment.centerLeft,
-
-                      child: Text.rich(
-                        TextSpan(
-                          children: <TextSpan>[
+                      const SizedBox(height: 10),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text.rich(
                             TextSpan(
-                              text: 'Distribuidora: ', // Parte que ficará em negrito
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold, // Negrito
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'ConcernedApe', // Parte que ficará normal
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                        const Text.rich(
-                        TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'Sinopse: ', // Parte que ficará em negrito
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold, // Negrito
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'Deixe a vida agitada da cidade e comece uma nova vida em uma fazenda em Stardew Valley. Cultive, pesque, crie animais, faça amigos e explore cavernas cheias de mistérios nesta encantadora simulação de fazenda.', // Parte que ficará normal
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    const SizedBox(height: 20),
-                    // Botões
-                    Column(
-                      children: [
-                        // Botão verde "JOGAR"
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 41, 144, 43), // Cor de fundo verde
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50), // Bordas arredondadas
-                              side: const BorderSide(color: Color.fromARGB(255, 51, 84, 60), width: 6), // Borda branca
-                              
-                            ),
-                            padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 15), // Tamanho do botão
-                          ),
-
-                          
-                              child: GestureDetector(
-                                onTap: () {
-                                      Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => StardewValleyVideo()),
-                                    );
-
-                                },
-                                child: const Text(
-                                  'JOGAR',
+                              children: [
+                                TextSpan(
+                                  text: 'Data de Lançamento: ',
                                   style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
                                     fontSize: 16,
-                                    color: Colors.white, // Cor do texto branco
-                                    fontFamily: 'DaynsOne',
                                   ),
                                 ),
-                              )
-
-
-                        ),
-                        const SizedBox(height: 10), // Espaço entre os botões
-
-                        // Botão branco com borda "Adicionar aos Salvos"
-                        OutlinedButton(
-                          onPressed: () {},
-                          style: OutlinedButton.styleFrom(
-                            side: const BorderSide(color: Colors.white, width: 5), // Borda branca
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50), // Bordas arredondadas
-                            ),
-                            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15), // Tamanho do botão
-                          ),
-                          child: const Text(
-                            'Adicionar aos Salvos',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white, // Cor do texto branco
+                                TextSpan(
+                                  text: '26/Fev/2016',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Distribuidora: ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'ConcernedApe',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    )
-                  ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Sinopse: ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                            TextSpan(
+                              text:
+                                  'Deixe a vida agitada da cidade e comece uma nova vida em uma fazenda em Stardew Valley...',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      // Botões
+                      Column(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => StardewValleyVideo()),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 41, 144, 43),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 51, 84, 60),
+                                    width: 6),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 55, vertical: 15),
+                            ),
+                            child: const Text(
+                              'JOGAR',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontFamily: 'DaysOne',
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          OutlinedButton(
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                              side: const BorderSide(
+                                  color: Colors.white, width: 5),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 50, vertical: 15),
+                            ),
+                            child: const Text(
+                              'Adicionar aos Salvos',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            bottomNavigationBar: navBar(
-              currentIndex: _selectedIndex,
-              onTap: _onItemTapped,
+              bottomNavigationBar: navBar(
+                currentIndex: _selectedIndex,
+                onTap: _onItemTapped,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -31,6 +31,8 @@ class _SalvosState extends State<Salvos> {
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
 
           appBar: AppBar(
+                            automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+
             title: const Padding(
               padding: EdgeInsets.only(top: 20.0), // Ajuste o valor de top conforme necessário
               child: Text(
@@ -62,7 +64,7 @@ class _SalvosState extends State<Salvos> {
 
                   GestureDetector(
                       onTap: () {
-                         Navigator.pushReplacementNamed(context, '/bloondTD');
+                         Navigator.pushNamed(context, '/bloondTD');
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -139,7 +141,7 @@ class _SalvosState extends State<Salvos> {
 
                     GestureDetector(
                       onTap: () {
-                         Navigator.pushReplacementNamed(context, '/lifeIs');
+                         Navigator.pushNamed(context, '/lifeIs');
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -216,7 +218,7 @@ class _SalvosState extends State<Salvos> {
 
                     GestureDetector(
                       onTap: () {
-                         Navigator.pushReplacementNamed(context, '/stardewValley');
+                         Navigator.pushNamed(context, '/stardewValley');
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -293,7 +295,7 @@ class _SalvosState extends State<Salvos> {
 
                     GestureDetector(
                       onTap: () {
-                         Navigator.pushReplacementNamed(context, '/elderScrolls');
+                         Navigator.pushNamed(context, '/elderScrolls');
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -370,7 +372,7 @@ class _SalvosState extends State<Salvos> {
 
                     GestureDetector(
                       onTap: () {
-                         Navigator.pushReplacementNamed(context, '/theSims4');
+                         Navigator.pushNamed(context, '/theSims4');
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row

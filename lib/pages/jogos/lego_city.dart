@@ -29,6 +29,8 @@ class _LegoCityState extends State<LegoCity> {
           child: Scaffold(
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
+                              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título

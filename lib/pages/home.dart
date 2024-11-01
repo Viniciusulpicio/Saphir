@@ -70,9 +70,9 @@ class _HomeState extends State<Home> {
                 const SizedBox(height: 10),
                 GestureDetector(
                   child: Image.asset("assets/image/home/Stardew Valley 2.png"),
-                  onTap: () =>
-                      Navigator.pushReplacementNamed(context, '/stardewValley'),
+                  onTap: () => Navigator.pushNamed(context, '/stardewValley'),
                 ),
+
                 const SizedBox(height: 15),
                 Container(
                   margin: const EdgeInsets.only(left: 45.0), // Alinhado com o grid
@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                       return GestureDetector(
                         onTap: () {
                           // Navegar para a página específica da categoria
-                          Navigator.pushReplacementNamed(context, category['route']);
+                          Navigator.pushNamed(context, category['route']);
                         },
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
@@ -138,7 +138,7 @@ class _HomeState extends State<Home> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
