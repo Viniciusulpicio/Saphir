@@ -30,17 +30,17 @@ class _HomeState extends State<Home> {
   ];
 
     final List<Map<String, dynamic>> amigosList = [
-    {'image': 'assets/image/home/mineirinhoUltra.png', 'route': '/'},
-    {'image': 'assets/image/home/goat.png', 'route': '/'},
-    {'image': 'assets/image/home/lizardsMust.png', 'route': '/'},
-    {'image': 'assets/image/home/ark.png', 'route': '/'},
+    {'image': 'assets/image/home/mineirinhoUltra.png', 'route': ''},
+    {'image': 'assets/image/home/goat.png', 'route': ''},
+    {'image': 'assets/image/home/lizardsMust.png', 'route': ''},
+    {'image': 'assets/image/home/ark.png', 'route': ''},
   ];
 
     final List<Map<String, dynamic>> novidadeList = [
-    {'image': 'assets/image/home/aeternum.png', 'route': '/'},
-    {'image': 'assets/image/home/lostark.png', 'route': '/'},
-    {'image': 'assets/image/home/lensProtoco.png', 'route': '/'},
-    {'image': 'assets/image/home/eteanalFrost.png', 'route': '/'},
+    {'image': 'assets/image/home/aeternum.png', 'route': ''},
+    {'image': 'assets/image/home/lostark.png', 'route': ''},
+    {'image': 'assets/image/home/lensProtoco.png', 'route': ''},
+    {'image': 'assets/image/home/eteanalFrost.png', 'route': ''},
   ];
 
   void _onItemTapped(int index) {

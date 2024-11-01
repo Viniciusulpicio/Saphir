@@ -21,15 +21,15 @@ class _AcaoState extends State<Acao> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/acao/rainbow.png', 'route': '/'},
-    {'image': 'assets/image/acao/monsterHunter.png', 'route': '/'},
-    {'image': 'assets/image/acao/greenHell.png', 'route': '/'},
+    {'image': 'assets/image/acao/rainbow.png', 'route': ''},
+    {'image': 'assets/image/acao/monsterHunter.png', 'route': ''},
+    {'image': 'assets/image/acao/greenHell.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/acao/redDead.png', 'route': '/'},
-    {'image': 'assets/image/acao/assasinsCreed.png', 'route': '/'},
-    {'image': 'assets/image/acao/gpaperhed.png', 'route': '/'},
+    {'image': 'assets/image/acao/redDead.png', 'route': ''},
+    {'image': 'assets/image/acao/assasinsCreed.png', 'route': ''},
+    {'image': 'assets/image/acao/gpaperhed.png', 'route': ''},
   ];
 
   @override

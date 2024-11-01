@@ -21,15 +21,15 @@ class _CasualState extends State<Casual> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/casual/terraria.png', 'route': '/'},
+    {'image': 'assets/image/casual/terraria.png', 'route': ''},
     {'image': 'assets/image/casual/stardewValley.png', 'route': '/stardewValley'},
-    {'image': 'assets/image/casual/trickyTowcrs.png', 'route': '/'},
+    {'image': 'assets/image/casual/trickyTowcrs.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/casual/EverShine.png', 'route': '/'},
-    {'image': 'assets/image/casual/tanuki.png', 'route': '/'},
-    {'image': 'assets/image/casual/whimSide.png', 'route': '/'},
+    {'image': 'assets/image/casual/EverShine.png', 'route': ''},
+    {'image': 'assets/image/casual/tanuki.png', 'route': ''},
+    {'image': 'assets/image/casual/whimSide.png', 'route': ''},
   ];
 
   @override

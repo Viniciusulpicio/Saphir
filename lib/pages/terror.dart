@@ -22,14 +22,14 @@ class _TerrorState extends State<Terror> {
 
         final List<Map<String, dynamic>> principais = [
     {'image': 'assets/image/terror/silentHill.png', 'route': '/silentHill'},
-    {'image': 'assets/image/terror/residentEvil.png', 'route': '/'},
-    {'image': 'assets/image/terror/layersFear.png', 'route': '/'},
+    {'image': 'assets/image/terror/residentEvil.png', 'route': ''},
+    {'image': 'assets/image/terror/layersFear.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/terror/beautifulLight.png', 'route': '/'},
-    {'image': 'assets/image/terror/midnightWalk.png', 'route': '/'},
-    {'image': 'assets/image/terror/pathologic.png', 'route': '/'},
+    {'image': 'assets/image/terror/beautifulLight.png', 'route': ''},
+    {'image': 'assets/image/terror/midnightWalk.png', 'route': ''},
+    {'image': 'assets/image/terror/pathologic.png', 'route': ''},
   ];
 
   @override

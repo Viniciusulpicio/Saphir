@@ -22,14 +22,14 @@ class _RpgState extends State<Rpg> {
 
         final List<Map<String, dynamic>> principais = [
     {'image': 'assets/image/rpg/skyrim.png', 'route': '/elderScrolls'},
-    {'image': 'assets/image/rpg/diablo.png', 'route': '/'},
-    {'image': 'assets/image/rpg/baldursGate 1.png', 'route': '/'},
+    {'image': 'assets/image/rpg/diablo.png', 'route': ''},
+    {'image': 'assets/image/rpg/baldursGate 1.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/rpg/threads.png', 'route': '/'},
-    {'image': 'assets/image/rpg/metaphor.png', 'route': '/'},
-    {'image': 'assets/image/rpg/exile.png', 'route': '/'},
+    {'image': 'assets/image/rpg/threads.png', 'route': ''},
+    {'image': 'assets/image/rpg/metaphor.png', 'route': ''},
+    {'image': 'assets/image/rpg/exile.png', 'route': ''},
   ];
 
   @override

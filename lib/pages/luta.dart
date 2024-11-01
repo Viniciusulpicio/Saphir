@@ -21,15 +21,15 @@ class _LutaState extends State<Luta> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/luta/finalFantasy.png', 'route': '/'},
-    {'image': 'assets/image/luta/devilMay.png', 'route': '/'},
-    {'image': 'assets/image/luta/streetFighter.png', 'route': '/'},
+    {'image': 'assets/image/luta/finalFantasy.png', 'route': ''},
+    {'image': 'assets/image/luta/devilMay.png', 'route': ''},
+    {'image': 'assets/image/luta/streetFighter.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/luta/bleach.png', 'route': '/'},
-    {'image': 'assets/image/luta/dynastyWarriors.png', 'route': '/'},
-    {'image': 'assets/image/luta/turtles.png', 'route': '/'},
+    {'image': 'assets/image/luta/bleach.png', 'route': ''},
+    {'image': 'assets/image/luta/dynastyWarriors.png', 'route': ''},
+    {'image': 'assets/image/luta/turtles.png', 'route': ''},
   ];
 
   @override

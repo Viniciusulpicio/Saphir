@@ -448,7 +448,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/');
+                           Navigator.pushNamed(context, '');
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -525,7 +525,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/');
+                           Navigator.pushNamed(context, '');
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -602,7 +602,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/');
+                           Navigator.pushNamed(context, '');
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -679,7 +679,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/');
+                           Navigator.pushNamed(context, '');
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row

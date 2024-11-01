@@ -22,14 +22,14 @@ class _SimulacaoState extends State<Simulacao> {
 
         final List<Map<String, dynamic>> principais = [
     {'image': 'assets/image/simulacao/euroTruck.png', 'route': '/'},
-    {'image': 'assets/image/simulacao/theSims3.png', 'route': '/'},
-    {'image': 'assets/image/simulacao/theSims2.png', 'route': '/'},
+    {'image': 'assets/image/simulacao/theSims3.png', 'route': ''},
+    {'image': 'assets/image/simulacao/theSims2.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/simulacao/inzoi.png', 'route': '/'},
-    {'image': 'assets/image/simulacao/assettoCorsa.png', 'route': '/'},
-    {'image': 'assets/image/simulacao/civilization.png', 'route': '/'},
+    {'image': 'assets/image/simulacao/inzoi.png', 'route': ''},
+    {'image': 'assets/image/simulacao/assettoCorsa.png', 'route': ''},
+    {'image': 'assets/image/simulacao/civilization.png', 'route': ''},
   ];
 
   @override
