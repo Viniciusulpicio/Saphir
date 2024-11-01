@@ -71,6 +71,7 @@ class MyApp extends StatelessWidget {
         '/recuperarCodigo': (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail': (context) => const RecuperarSenhaEmail(),
         '/salvos': (context) => const Salvos(),
+        '/novidade' : (context) => const Novidades(),
         '/acao': (context) => const Acao(),
         '/casual': (context) => const Casual(),
         '/luta': (context) => const Luta(),
@@ -78,12 +79,16 @@ class MyApp extends StatelessWidget {
         '/simulacao': (context) => const Simulacao(),
         '/terror': (context) => const Terror(),
         '/editarPerfil': (context) => const Editarperfil(),
+<<<<<<< HEAD
         '/amigos': (context) => const Amigos(),
         '/novidade': (context) => const Novidades(),
         '/selecioneConta': (context) => const Selecioneconta(),
         '/starWarsVideo': (context) =>  StarWarsVideo(),
         '/stardewValleyVideo': (context) =>  StardewValleyVideo(),
 
+=======
+        '/amigos': (context) => const Amigos(),        '/selecioneConta' : (context) => const Selecioneconta(),
+>>>>>>> 8591fbea87308345e8f59f59b78d5a0e32ce72b5
 
 
         // jogos
@@ -104,6 +109,10 @@ class MyApp extends StatelessWidget {
         '/theLastUs': (context) => const TheLastUs(),
         '/theSims2': (context) => const TheSims2(),
         '/theSims4': (context) => const TheSims4(),
+
+
+        '/videoStardew' : (context) =>  StardewValleyVideo(), 
+        '/videoStarWars' : (context) =>  StarWarsVideo(),
       },
     );
   }
