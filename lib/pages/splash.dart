@@ -38,8 +38,10 @@ class _SplashScreenState extends State<Splash> with TickerProviderStateMixin {
     );
 
     // Animação para o texto "saphir" subir ao final da splash
-    _finalSlideAnimation = Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0, -2))
-        .animate(CurvedAnimation(parent: _finalSlideController, curve: Curves.easeInOut));
+    _finalSlideAnimation =
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0, -2))
+            .animate(CurvedAnimation(
+                parent: _finalSlideController, curve: Curves.easeInOut));
 
     // Iniciar a animação do ícone
     _iconController.forward();
@@ -55,17 +57,17 @@ class _SplashScreenState extends State<Splash> with TickerProviderStateMixin {
 
     // Após 3 segundos, iniciar a animação de deslizamento do texto para cima
     Future.delayed(const Duration(seconds: 2), () {
-      _finalSlideController.forward(); // Iniciar a animação de deslizamento para o topo
-    });
-
-    // Após 5 segundos, transitar para a tela de login
-    Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        // ignore: use_build_context_synchronously
-        context,
-        MaterialPageRoute(builder: (context) => const Login()), // Transição para a tela de login
-      );
-    });
+      if (mounted) {
+        _finalSlideController.forward();
+      }
+    }).then((_) => Future.delayed(const Duration(seconds: 3), () {
+          if (mounted) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const Login()),
+            );
+          }
+        }));
   }
 
   @override
