@@ -58,8 +58,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/home",
+      initialRoute: "/",
       routes: {
+        //geral
         // '/' : (context) => const Splash(),
         '/login' : (context) => const Login(),
         '/cadastro' : (context) => const Cadastro(),
@@ -99,7 +100,7 @@ class MyApp extends StatelessWidget {
         '/theSims2' : (context) => const TheSims2(),
         '/theSims4' : (context) => const TheSims4(),
 
-
+        //video
         '/videoStardew' : (context) =>  StardewValleyVideo(), 
         '/videoStarWars' : (context) =>  StarWarsVideo(),
       },
