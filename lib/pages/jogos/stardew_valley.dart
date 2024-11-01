@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/video/stardew_valley_video.dart';
 import 'package:saphir/shared/style.dart';
 import 'package:saphir/components/nav_bar.dart';
 
@@ -32,12 +33,14 @@ class _StarWarsState extends State<StardewValley> {
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
-                  child: const Text(
-                    "Stardew Valley",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontFamily: 'DaysOne',
+                  child: const Center(
+                    child: Text(
+                      "Stardew Valley",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontFamily: 'DaysOne',
+                      ),
                     ),
                   ),
                 ),
@@ -54,7 +57,7 @@ class _StarWarsState extends State<StardewValley> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogo_stardew/stardew_valley.png',
+                        'assets/image/jogos/stardewValley.png',
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -178,14 +181,27 @@ class _StarWarsState extends State<StardewValley> {
                             ),
                             padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 15), // Tamanho do botão
                           ),
-                          child: const Text(
-                            'JOGAR',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white, // Cor do texto branco
-                              fontFamily: 'DaynsOne'
-                            ),
-                          ),
+
+                          
+                              child: GestureDetector(
+                                onTap: () {
+                                      Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => StardewValleyVideo()),
+                                    );
+
+                                },
+                                child: const Text(
+                                  'JOGAR',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white, // Cor do texto branco
+                                    fontFamily: 'DaynsOne',
+                                  ),
+                                ),
+                              )
+
+
                         ),
                         const SizedBox(height: 10), // Espaço entre os botões
 

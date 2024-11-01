@@ -35,6 +35,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  carousel_slider: ^5.0.0
+  video_player: ^2.9.2
+
+
+
 
 dev_dependencies:
   flutter_test:
@@ -46,7 +51,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
-
   flutter_launcher_icons: ^0.11.0
 
 flutter_icons:
@@ -75,15 +79,20 @@ flutter:
     - assets/image/configuracao/
     - assets/image/conta/
     - assets/image/home/
-    - assets/image/jogo_lifeStrange/
-    - assets/image/jogo_redDead/
-    - assets/image/jogo_stardew/
-    - assets/image/jogo_starWars/
     - assets/image/login/
     - assets/image/nav_bar/
     - assets/image/pesquisa/
     - assets/image/resultado_pesquisa/
-
+    - assets/image/acao/
+    - assets/image/casual/
+    - assets/image/jogos/ 
+    - assets/image/luta/
+    - assets/image/rpg/
+    - assets/image/simulacao/
+    - assets/image/terror/
+    - assets/image/salvos/
+    - assets/image/selecioneConta/
+    - assets/video/
 
 
   #   - images/a_dot_ham.jpeg

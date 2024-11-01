@@ -249,7 +249,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
   void buttonEnterClick() {
     if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/home');
     } else {
       print("form erro");
     }

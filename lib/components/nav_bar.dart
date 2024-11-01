@@ -17,13 +17,13 @@ class navBar extends StatelessWidget {
         child: BottomNavigationBar(
           currentIndex: currentIndex,
           onTap: (index) {
-            if (index == currentIndex) {
+          if (index == currentIndex && index != 0) {
               // Se o índice atual for o mesmo, não faça nada
               return;
             }
+            debugPrint('Navegando para a página de índice: $index');
 
-            // Se for uma nova página, chame a função de navegação
-            onTap(index);
+
 
             // Navegação
             switch (index) {
@@ -34,7 +34,7 @@ class navBar extends StatelessWidget {
                 Navigator.pushReplacementNamed(context, '/salvos');
                 break;
               case 2:
-                Navigator.pushReplacementNamed(context, '/listas');
+                Navigator.pushReplacementNamed(context, '/novidade');
                 break;
               case 3:
                 Navigator.pushReplacementNamed(context, '/configuracao');
@@ -42,7 +42,11 @@ class navBar extends StatelessWidget {
               default:
                 Navigator.pushReplacementNamed(context, '/home');
             }
+                        // Se for uma nova página, chame a função de navegação
+            onTap(index);
           },
+
+          
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Padding(
@@ -70,7 +74,7 @@ class navBar extends StatelessWidget {
               icon: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0), // Espaçamento entre os itens
                 child: Image.asset(
-                  'assets/image/nav_bar/lista.png',
+                  'assets/image/nav_bar/fire.png',
                   width: 24,
                   height: 24,
                 ),

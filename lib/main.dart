@@ -1,5 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/acao.dart';
+import 'package:saphir/pages/casual.dart';
+import 'package:saphir/pages/jogos/bloons_TD.dart';
+import 'package:saphir/pages/jogos/elden_ring.dart';
+import 'package:saphir/pages/jogos/elder_scrolls.dart';
+import 'package:saphir/pages/jogos/legoBatman.dart';
+import 'package:saphir/pages/jogos/lego_city.dart';
+import 'package:saphir/pages/jogos/lego_super_herois.dart';
+import 'package:saphir/pages/jogos/mineirinho_ultra.dart';
+import 'package:saphir/pages/jogos/mortal_kombat.dart';
+import 'package:saphir/pages/jogos/outlast.dart';
+import 'package:saphir/pages/jogos/silent_hill.dart';
 import 'package:saphir/pages/jogos/stardew_valley.dart';
+import 'package:saphir/pages/jogos/the_last_us.dart';
+import 'package:saphir/pages/jogos/the_sims2.dart';
+import 'package:saphir/pages/jogos/the_sims4.dart';
+import 'package:saphir/pages/luta.dart';
+import 'package:saphir/pages/novidades.dart';
+import 'package:saphir/pages/rpg.dart';
+import 'package:saphir/pages/salvos.dart';
+import 'package:saphir/pages/selecioneConta.dart';
+import 'package:saphir/pages/simulacao.dart';
+import 'package:saphir/pages/terror.dart';
+import 'package:saphir/pages/video/star_wars_video.dart';
+import 'package:saphir/pages/video/stardew_valley_video.dart';
 import 'package:saphir/shared/style.dart';
 
 import 'package:saphir/pages/splash.dart';
@@ -14,7 +38,6 @@ import 'package:saphir/pages/jogos/star_wars.dart';
 import 'package:saphir/pages/recuperar_senha/nova_senha.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_codigo.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_email.dart';
-import 'package:saphir/components/barra_pesquisa.dart';
 
 
 void main() {
@@ -43,17 +66,42 @@ class MyApp extends StatelessWidget {
         '/home' : (context) => const Home(),
         '/configuracao' : (context) => const Configuracao(),
         '/conta' : (context) => const Conta(),
-        '/lifeIs' : (context) =>  const LifeIsStrange(),
-        '/redDead' : (context) => const RedDead(),
-        '/starWars' : (context) => const StarWars(),
-        '/stardewValley' : (context) => const StardewValley(),
         '/novaSenha' : (context) => const NovaSenha(),
         '/recuperarCodigo' : (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail' : (context) => const RecuperarSenhaEmail(),
-        '/barraPesuisa' : (context) => const BarraPesquisa(),
+        '/salvos' : (context) => const Salvos(),
+        '/novidade' : (context) => const Novidades(),
+        '/acao' : (context) => const Acao(),
+        '/casual' : (context) => const Casual(),
+        '/luta' : (context) => const Luta(),
+        '/rpg' : (context) => const Rpg(),
+        '/simulacao' : (context) => const Simulacao(),
+        '/terror' : (context) => const Terror(),
+        '/selecioneConta' : (context) => const Selecioneconta(),
 
-        
 
+        // jogos
+        '/lifeIs' : (context) =>  const LifeIsStrange(),
+        '/redDead' : (context) => const RedDead(),
+        '/starWars' : (context) => const StarWars(),
+        '/bloondTD' : (context) =>  const BloonsTd(),
+        '/eldenRing' : (context) => const EldenRing(),
+        '/elderScrolls' : (context) => const ElderScrolls(),       
+        '/legoCity' : (context) => const LegoCity(),        
+        '/legoHerois' : (context) => const LegoSuperHerois(),
+        '/legoBatman' : (context) => const Legobatman(),       
+        '/mineirinhoUltra' : (context) => const MineirinhoUltra(),
+        '/mortalKombat' : (context) => const MortalKombat(),
+        '/outlast' : (context) => const Outlast(),        
+        '/stardewValley' : (context) => const StardewValley(),
+        '/silentHill' : (context) => const SilentHill(),
+        '/theLastUs' : (context) => const TheLastUs(),       
+        '/theSims2' : (context) => const TheSims2(),
+        '/theSims4' : (context) => const TheSims4(),
+
+
+        '/videoStardew' : (context) =>  StardewValleyVideo(), 
+        '/videoStarWars' : (context) =>  StarWarsVideo(),
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saphir/pages/video/star_wars_video.dart';
 import 'package:saphir/shared/style.dart';
 import 'package:saphir/components/nav_bar.dart';
 
@@ -32,12 +33,14 @@ class _StarWarsState extends State<StarWars> {
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40), // Adiciona margem apenas acima do título
-                  child: const Text(
-                    "LEGO® Star Wars: A Saga Skywalker",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontFamily: 'DaysOne',
+                  child: Center(
+                    child: const Text(
+                      "LEGO® Star Wars: A Saga Skywalker",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontFamily: 'DaysOne',
+                      ),
                     ),
                   ),
                 ),
@@ -54,7 +57,7 @@ class _StarWarsState extends State<StarWars> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogo_starWars/star_wars.png',
+                        'assets/image/jogos/legoStarWars.png',
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -178,14 +181,23 @@ class _StarWarsState extends State<StarWars> {
                             ),
                             padding: const EdgeInsets.symmetric(horizontal: 55, vertical: 15), // Tamanho do botão
                           ),
-                          child: const Text(
-                            'JOGAR',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white, // Cor do texto branco
-                              fontFamily: 'DaynsOne'
-                            ),
-                          ),
+                              child: GestureDetector(
+                                onTap: () {
+                                      Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => StarWarsVideo()),
+                                    );
+
+                                },
+                                child: const Text(
+                                  'JOGAR',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.white, // Cor do texto branco
+                                    fontFamily: 'DaynsOne',
+                                  ),
+                                ),
+                              )
                         ),
                         const SizedBox(height: 10), // Espaço entre os botões
 
