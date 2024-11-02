@@ -46,17 +46,24 @@ class _RpgState extends State<Rpg> {
           child: Scaffold(       
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
-                              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
-
-              title: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      child: const BarraPesquisaWidget(),
+              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+              title: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0,),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: BarraPesquisaWidget(),
                     ),
-                  ),
+                    const Padding(padding: EdgeInsets.only(left: 5.0,),),
 
-                ],
+                    
+                    GestureDetector(
+                      child: Image.asset("assets/image/home/raio.png",
+                    height: 35,),
+                    onTap: () => Navigator.pushNamed(context, '/plano'),
+                    )
+                  ],
+                ),
               ),
               backgroundColor: Colors.transparent, // Faz o AppBar ser transparente
               elevation: 0,

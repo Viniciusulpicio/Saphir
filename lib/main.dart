@@ -17,6 +17,7 @@ import 'package:saphir/pages/jogos/the_sims2.dart';
 import 'package:saphir/pages/jogos/the_sims4.dart';
 import 'package:saphir/pages/luta.dart';
 import 'package:saphir/pages/novidades.dart';
+import 'package:saphir/pages/plano.dart';
 import 'package:saphir/pages/rpg.dart';
 import 'package:saphir/pages/salvos.dart';
 import 'package:saphir/pages/selecioneConta.dart';
@@ -79,6 +80,8 @@ class MyApp extends StatelessWidget {
         '/simulacao' : (context) => const Simulacao(),
         '/terror' : (context) => const Terror(),
         '/selecioneConta' : (context) => const Selecioneconta(),
+        '/plano' : (context) => const Plano(),
+
 
 
         // jogos

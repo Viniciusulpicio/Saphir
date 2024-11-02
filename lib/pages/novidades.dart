@@ -63,7 +63,7 @@ class _NovidadesState extends State<Novidades> {
                           child: Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 3, 4, 105), // Cor de fundo
+                              color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
                               borderRadius: BorderRadius.circular(20), // Borda arredondada
                             ),
                             child: Row(
@@ -128,7 +128,7 @@ class _NovidadesState extends State<Novidades> {
                           child: Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 3, 4, 105), // Cor de fundo
+                              color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
                               borderRadius: BorderRadius.circular(20), // Borda arredondada
                             ),
                             child: Row(
@@ -193,7 +193,7 @@ class _NovidadesState extends State<Novidades> {
                           child: Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 3, 4, 105), // Cor de fundo
+                              color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
                               borderRadius: BorderRadius.circular(20), // Borda arredondada
                             ),
                             child: Row(
@@ -257,7 +257,7 @@ class _NovidadesState extends State<Novidades> {
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 3, 4, 105), // Cor de fundo
+                          color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
                           borderRadius: BorderRadius.circular(20), // Borda arredondada
                         ),
                         child: Column(
@@ -310,7 +310,7 @@ class _NovidadesState extends State<Novidades> {
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 3, 4, 105), // Cor de fundo
+                          color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
                           borderRadius: BorderRadius.circular(20), // Borda arredondada
                         ),
                         child: Column(
@@ -368,7 +368,7 @@ class _NovidadesState extends State<Novidades> {
                           child: Container(
                             padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 3, 4, 105), // Cor de fundo
+                              color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
                               borderRadius: BorderRadius.circular(20), // Borda arredondada
                             ),
                             child: Row(

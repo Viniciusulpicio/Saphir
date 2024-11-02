@@ -61,12 +61,23 @@ class _HomeState extends State<Home> {
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
               automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
-              title: const Row(
-                children: [
-                  Expanded(
-                    child: BarraPesquisaWidget(),
-                  ),
-                ],
+              title: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0,),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: BarraPesquisaWidget(),
+                    ),
+                    const Padding(padding: EdgeInsets.only(left: 5.0,),),
+
+                    
+                    GestureDetector(
+                      child: Image.asset("assets/image/home/raio.png",
+                    height: 35,),
+                    onTap: () => Navigator.pushNamed(context, '/plano'),
+                    )
+                  ],
+                ),
               ),
               backgroundColor: Colors.transparent, // Faz o AppBar ser transparente
               elevation: 0,
@@ -78,7 +89,7 @@ class _HomeState extends State<Home> {
                 children: [
                   const SizedBox(height: 10),
                   GestureDetector(
-                    child: Image.asset("assets/image/home/Stardew Valley 2.png"),
+                    child: Image.asset("assets/image/home/Stardew Valley 2.png", ),
                     onTap: () => Navigator.pushNamed(context, '/stardewValley'),
                   ),
                   const SizedBox(height: 15),
