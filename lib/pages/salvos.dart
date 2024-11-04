@@ -18,17 +18,20 @@ class _SalvosState extends State<Salvos> {
       _selectedIndex = index;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          color: const Color.fromARGB(255, 0, 8, 2), // Fundo preto por trás do gradiente
+          color: const Color.fromARGB(
+              255, 0, 8, 2), // Fundo preto por trás do gradiente
         ),
         GradientBackground(
           child: Scaffold(
-            backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
+            backgroundColor: Colors
+                .transparent, // Torna o fundo transparente para o gradiente aparecer
+
 
           appBar: AppBar(
                             automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
@@ -43,12 +46,12 @@ class _SalvosState extends State<Salvos> {
                   fontFamily: 'DaysOne',
                 ),
               ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 80,
+              centerTitle: true,
             ),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: 80,
-            centerTitle: true,
-          ),
+
 
             body: SingleChildScrollView(
               child: Padding(
@@ -212,6 +215,7 @@ class _SalvosState extends State<Salvos> {
                         ],
                       ),
                     ),
+
               
                         SizedBox(height: 30),
               
@@ -289,6 +293,7 @@ class _SalvosState extends State<Salvos> {
                         ],
                       ),
                     ),
+
               
                     SizedBox(height: 30),
               
@@ -366,6 +371,7 @@ class _SalvosState extends State<Salvos> {
                         ],
                       ),
                     ),
+
               
                                       SizedBox(height: 30),
               
@@ -443,6 +449,7 @@ class _SalvosState extends State<Salvos> {
                         ],
                       ),
                     ),
+
               
                                                         SizedBox(height: 30),
               
@@ -597,6 +604,7 @@ class _SalvosState extends State<Salvos> {
                         ],
                       ),
                     ),
+
               
                                                         SizedBox(height: 30),
               
@@ -759,6 +767,7 @@ class _SalvosState extends State<Salvos> {
               
                   ],
                 ),
+
               ),
             ),
             bottomNavigationBar: navBar(
