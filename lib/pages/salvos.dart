@@ -32,25 +32,25 @@ class _SalvosState extends State<Salvos> {
             backgroundColor: Colors
                 .transparent, // Torna o fundo transparente para o gradiente aparecer
 
-
-          appBar: AppBar(
-                            automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
-
-            title: const Padding(
-              padding: EdgeInsets.only(top: 20.0), // Ajuste o valor de top conforme necessário
-              child: Text(
-                "Salvos",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontFamily: 'DaysOne',
+              appBar: AppBar(
+                automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+                title: const Padding(
+                  padding: EdgeInsets.only(top: 20.0), // Ajuste o valor de top conforme necessário
+                  child: Text(
+                    "Salvos",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontFamily: 'DaysOne',
+                    ),
+                  ),
                 ),
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                toolbarHeight: 80,
+                centerTitle: true,
               ),
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              toolbarHeight: 80,
-              centerTitle: true,
-            ),
+
 
 
             body: SingleChildScrollView(
@@ -773,9 +773,9 @@ class _SalvosState extends State<Salvos> {
             bottomNavigationBar: navBar(
               currentIndex: _selectedIndex,
               onTap: _onItemTapped,
+          )
             ),
           ),
-        ),
       ],
     );
   }
