@@ -94,6 +94,9 @@ flutter:
     - assets/image/salvos/
     - assets/image/selecioneConta/
     - assets/video/
+    - assets/image/novidades/
+    - assets/image/plano/
+
 
 
   #   - images/a_dot_ham.jpeg

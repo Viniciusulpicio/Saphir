@@ -19,6 +19,7 @@ import 'package:saphir/pages/jogos/the_sims2.dart';
 import 'package:saphir/pages/jogos/the_sims4.dart';
 import 'package:saphir/pages/luta.dart';
 import 'package:saphir/pages/novidades.dart';
+import 'package:saphir/pages/plano.dart';
 import 'package:saphir/pages/rpg.dart';
 import 'package:saphir/pages/salvos.dart';
 import 'package:saphir/pages/selecioneConta.dart';
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
 
       initialRoute: "/",
       routes: {
+        //geral
         '/' : (context) => const Splash(),
         '/login': (context) => const Login(),
         '/cadastro': (context) => const Cadastro(),
@@ -72,6 +74,7 @@ class MyApp extends StatelessWidget {
         '/recuperarEmail': (context) => const RecuperarSenhaEmail(),
         '/salvos': (context) => const Salvos(),
         '/novidade' : (context) => const Novidades(),
+        '/plano' : (context) => const Plano(),
         '/acao': (context) => const Acao(),
         '/casual': (context) => const Casual(),
         '/luta': (context) => const Luta(),
@@ -83,6 +86,7 @@ class MyApp extends StatelessWidget {
         '/selecioneConta': (context) => const Selecioneconta(),
         '/starWarsVideo': (context) =>  StarWarsVideo(),
         '/stardewValleyVideo': (context) =>  StardewValleyVideo(),
+
 
 
 
@@ -107,7 +111,7 @@ class MyApp extends StatelessWidget {
         '/theSims2': (context) => const TheSims2(),
         '/theSims4': (context) => const TheSims4(),
 
-
+        //video
         '/videoStardew' : (context) =>  StardewValleyVideo(), 
         '/videoStarWars' : (context) =>  StarWarsVideo(),
       },

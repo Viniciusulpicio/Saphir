@@ -21,15 +21,15 @@ class _LutaState extends State<Luta> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/luta/finalFantasy.png', 'route': '/'},
-    {'image': 'assets/image/luta/devilMay.png', 'route': '/'},
-    {'image': 'assets/image/luta/streetFighter.png', 'route': '/'},
+    {'image': 'assets/image/luta/finalFantasy.png', 'route': ''},
+    {'image': 'assets/image/luta/devilMay.png', 'route': ''},
+    {'image': 'assets/image/luta/streetFighter.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/luta/bleach.png', 'route': '/'},
-    {'image': 'assets/image/luta/dynastyWarriors.png', 'route': '/'},
-    {'image': 'assets/image/luta/turtles.png', 'route': '/'},
+    {'image': 'assets/image/luta/bleach.png', 'route': ''},
+    {'image': 'assets/image/luta/dynastyWarriors.png', 'route': ''},
+    {'image': 'assets/image/luta/turtles.png', 'route': ''},
   ];
 
   @override
@@ -46,15 +46,24 @@ class _LutaState extends State<Luta> {
           child: Scaffold(       
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
-              title: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      child: const BarraPesquisaWidget(),
+              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+              title: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0,),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: BarraPesquisaWidget(),
                     ),
-                  ),
+                    const Padding(padding: EdgeInsets.only(left: 5.0,),),
 
-                ],
+                    
+                    GestureDetector(
+                      child: Image.asset("assets/image/home/raio.png",
+                    height: 35,),
+                    onTap: () => Navigator.pushNamed(context, '/plano'),
+                    )
+                  ],
+                ),
               ),
               backgroundColor: Colors.transparent, // Faz o AppBar ser transparente
               elevation: 0,
@@ -68,7 +77,7 @@ class _LutaState extends State<Luta> {
                 GestureDetector(
                   child: Image.asset('assets/image/luta/mortalKombat.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, '/mortalKombat'); // Navega para a rota
+                    Navigator.pushNamed(context, '/mortalKombat'); // Navega para a rota
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto
@@ -95,7 +104,7 @@ class _LutaState extends State<Luta> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
@@ -136,7 +145,7 @@ class _LutaState extends State<Luta> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushReplacementNamed(context, item['route']);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens

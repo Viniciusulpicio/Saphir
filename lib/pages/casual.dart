@@ -21,15 +21,15 @@ class _CasualState extends State<Casual> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/casual/terraria.png', 'route': '/'},
+    {'image': 'assets/image/casual/terraria.png', 'route': ''},
     {'image': 'assets/image/casual/stardewValley.png', 'route': '/stardewValley'},
-    {'image': 'assets/image/casual/trickyTowcrs.png', 'route': '/'},
+    {'image': 'assets/image/casual/trickyTowcrs.png', 'route': ''},
   ];
 
         final List<Map<String, dynamic>> breve = [
-    {'image': 'assets/image/casual/EverShine.png', 'route': '/'},
-    {'image': 'assets/image/casual/tanuki.png', 'route': '/'},
-    {'image': 'assets/image/casual/whimSide.png', 'route': '/'},
+    {'image': 'assets/image/casual/EverShine.png', 'route': ''},
+    {'image': 'assets/image/casual/tanuki.png', 'route': ''},
+    {'image': 'assets/image/casual/whimSide.png', 'route': ''},
   ];
 
   @override
@@ -46,15 +46,24 @@ class _CasualState extends State<Casual> {
           child: Scaffold(       
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
-              title: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      child: const BarraPesquisaWidget(),
+              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+              title: Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0,),
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: BarraPesquisaWidget(),
                     ),
-                  ),
+                    const Padding(padding: EdgeInsets.only(left: 5.0,),),
 
-                ],
+                    
+                    GestureDetector(
+                      child: Image.asset("assets/image/home/raio.png",
+                    height: 35,),
+                    onTap: () => Navigator.pushNamed(context, '/plano'),
+                    )
+                  ],
+                ),
               ),
               backgroundColor: Colors.transparent, // Faz o AppBar ser transparente
               elevation: 0,
@@ -68,7 +77,7 @@ class _CasualState extends State<Casual> {
                 GestureDetector(
                   child: Image.asset('assets/image/casual/bloonsTD.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushNamedAndRemoveUntil(context, '/bloondTD', (route) => false); // Navega para a rota
+                    Navigator.pushNamed(context, '/bloondTD'); // Navega para a rota
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto
@@ -95,7 +104,7 @@ class _CasualState extends State<Casual> {
                               return GestureDetector(
                                 onTap: () {
                                   // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushNamedAndRemoveUntil(context, item['route'], (route) => false);
+                                  Navigator.pushNamed(context, item['route']);
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens

@@ -28,19 +28,19 @@ class navBar extends StatelessWidget {
             // Navegação
             switch (index) {
               case 0:
-                Navigator.pushReplacementNamed(context, '/home');
+                Navigator.pushNamed(context, '/home');
                 break;
               case 1:
-                Navigator.pushReplacementNamed(context, '/salvos');
+                Navigator.pushNamed(context, '/salvos');
                 break;
               case 2:
-                Navigator.pushReplacementNamed(context, '/novidade');
+                Navigator.pushNamed(context, '/novidade');
                 break;
               case 3:
-                Navigator.pushReplacementNamed(context, '/configuracao');
+                Navigator.pushNamed(context, '/configuracao');
                 break;
               default:
-                Navigator.pushReplacementNamed(context, '/home');
+                Navigator.pushNamed(context, '/home');
             }
                         // Se for uma nova página, chame a função de navegação
             onTap(index);
