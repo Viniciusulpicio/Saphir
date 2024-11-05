@@ -1,0 +1,156 @@
+[
+    {
+      "id": 1,
+      "title": "LEGO® Star Wars: A Saga Skywalker",
+      "rating": "7,8/10",
+      "releaseDate": "2022",
+      "publisher": "Warner Bros. Entertainment",
+      "synopsis": "Reviva os momentos icônicos da saga Skywalker, desde os episódios I a IX, com personagens lendários como Luke Skywalker, Darth Vader, e Rey, em uma aventura LEGO® cheia de ação, quebra-cabeças e combates.",
+      "image": "assets/image/jogos/legoStarWars.png"
+    },
+    {
+      "id": 2,
+      "title": "LEGO® Marvel™ Super Heroes",
+      "rating": "7,9/10",
+      "releaseDate": "2013",
+      "publisher": "Warner Bros. Entertainment",
+      "synopsis": "Junte-se aos super-heróis da Marvel, como Homem de Ferro, Hulk, Thor, e outros, em uma batalha épica para salvar o mundo de vilões poderosos como Loki e Galactus, numa experiência cheia de ação e humor no universo LEGO®.",
+      "image": "assets/image/jogos/legoMarvel.png"
+    },
+    {
+      "id": 3,
+      "title": "Stardew Valley",
+      "rating": "8,5/10",
+      "releaseDate": "26/Fev/2016",
+      "publisher": "ConcernedApe",
+      "synopsis": "Deixe a vida agitada da cidade e comece uma nova vida em uma fazenda em Stardew Valley. Cultive, pesque, crie animais, faça amigos e explore cavernas cheias de mistérios nesta encantadora simulação de fazenda.",
+      "image": "assets/image/jogos/stardewValley.png"
+    },
+    {
+      "id": 4,
+      "title": "Life is Strange: Remastered Collection",
+      "rating": "8,5/10",
+      "releaseDate": "30/Set/2015",
+      "publisher": "Square Enix",
+      "synopsis": "Acompanhe Max Caulfield, uma jovem estudante de fotografia, que descobre a habilidade de voltar no tempo e deve usá-la para evitar uma tragédia iminente, enquanto enfrenta dilemas emocionais e escolhas difíceis.",
+      "image": "assets/image/jogos/lifeStrange.png"
+    },
+    {
+      "id": 5,
+      "title": "LEGO® CITY Undercover",
+      "rating": "8,2/10",
+      "releaseDate": "2017",
+      "publisher": "Warner Bros. Entertainment",
+      "synopsis": "Siga o policial Chase McCain em uma missão de mundo aberto para capturar o infame criminoso Rex Fury, enquanto explora a cidade de LEGO® City repleta de ação e humor.",
+      "image": "assets/image/jogos/legoCity.png"
+    },
+    {
+      "id": 6,
+      "title": "The Sims 2",
+      "rating": "8,5/10",
+      "releaseDate": "14/Set/2004",
+      "publisher": "Electronic Arts",
+      "synopsis": "Continue a saga da vida simulada com mais detalhes e controle em The Sims 2. Crie famílias, construa casas, explore carreiras e faça com que seus Sims vivam histórias únicas em um mundo cheio de surpresas.",
+      "image": "assets/image/jogos/theSims2.png"
+    },
+    {
+      "id": 7,
+      "title": "Red Dead Redemption 2",
+      "rating": "9,7/10",
+      "releaseDate": "26/Out/2018",
+      "publisher": "Rockstar Games",
+      "synopsis": "Embarque em uma jornada épica no Velho Oeste com Arthur Morgan e a gangue Van der Linde, enquanto tentam sobreviver em um mundo implacável cheio de conflitos, roubos e dramas pessoais, com um realismo impressionante e uma narrativa envolvente.",
+      "image": "assets/image/jogos/redDead2.png"
+    },
+    {
+      "id": 8,
+      "title": "LEGO® Batman™: The Videogame",
+      "rating": "7,1/10",
+      "releaseDate": "2008",
+      "publisher": "Warner Bros. Entertainment",
+      "synopsis": "Junte-se a Batman e Robin para combater vilões clássicos como o Coringa e o Charada, em uma Gotham City feita de LEGO®, repleta de ação, veículos icônicos e muita diversão.",
+      "image": "assets/image/jogos/legoBatman.png"
+    },
+    {
+      "id": 9,
+      "title": "Bloons TD 6",
+      "rating": "8,8/10",
+      "releaseDate": "14/Jun/2018",
+      "publisher": "Ninja Kiwi",
+      "synopsis": "Enfrente ondas de balões coloridos com uma variedade de torres e habilidades em um emocionante jogo de estratégia. Melhore suas defesas e colha recompensas enquanto avança em mapas desafiadores.",
+      "image": "assets/image/jogos/bloonsTD.png"
+    },
+    {
+      "id": 10,
+      "title": "The Elder Scrolls V: Skyrim",
+      "rating": "9,4/10",
+      "releaseDate": "11/Nov/2011",
+      "publisher": "Bethesda Game Studios",
+      "synopsis": "Mergulhe em um vasto mundo aberto repleto de dragões, magias e aventuras épicas. Como o Dragonborn, o destino de Skyrim está em suas mãos enquanto você decide o curso da história e enfrenta ameaças lendárias.",
+      "image": "assets/image/jogos/skyrim.png"
+    },
+    {
+      "id": 11,
+      "title": "The Sims 4",
+      "rating": "7,9/10",
+      "releaseDate": "2/Set/2014",
+      "publisher": "Electronic Arts",
+      "synopsis": "Crie e controle pessoas em um mundo virtual, definindo suas vidas, carreiras e relacionamentos. Deixe sua imaginação fluir enquanto você molda histórias e explora as possibilidades sem limites de The Sims 4.",
+      "image": "assets/image/jogos/theSims4.png"
+    },
+    {
+      "id": 12,
+      "title": "Silent Hill 2",
+      "rating": "8,7/10",
+      "releaseDate": "2024",
+      "publisher": "Konami",
+      "synopsis": "James Sunderland chegou na cidade de Silent Hill, Maine, depois de receber uma carta de sua esposa Mary, apesar do fato de que ela morreu de uma doença crônica três anos antes. A carta afirma que Mary está esperando por James em seu 'lugar especial'.",
+      "image": "assets/image/jogos/silentHill2.png"
+    },
+    {
+      "id": 13,
+      "title": "Mineirinho Ultra Adventures",
+      "rating": "6/10",
+      "releaseDate": "2017",
+      "publisher": "Old School Blender Addicted",
+      "synopsis": "Mineirinho Ultra Adventures, também conhecido como Miner Ultra Adventures em inglês, é um advergame independente de plataforma desenvolvido pelo programador Dennis Ferreira, do estúdio Manic Mind Game Lab.",
+      "image": "assets/image/jogos/mineirinhoUtra.png"
+    },
+    {
+      "id": 14,
+      "title": "The Last Of Us Part II Remastered",
+      "rating": "7,8/10",
+      "releaseDate": "2023",
+      "publisher": "Naughty Dog",
+      "synopsis": "A história começa com um evento trágico que leva Ellie a buscar vingança, desencadeando uma jornada brutal.",
+      "image": "assets/image/jogos/theLastUsremastered2.png"
+    },
+    {
+      "id": 15,
+      "title": "Mortal Kombat 1",
+      "rating": "6,7/10",
+      "releaseDate": "2024",
+      "publisher": "Warner Bros. Games",
+      "synopsis": "Descubra um Universo renascido de Mortal Kombat™ criado pelo Deus do Fogo Liu Kang. Mortal Kombat™ 1 inaugura uma nova era da franquia icônica com um novo sistema de luta, modos de jogo e fatalities!",
+      "image": "assets/image/jogos/mortalKombat.png"
+    },
+    {
+      "id": 16,
+      "title": "Elden Ring",
+      "rating": "8,2/10",
+      "releaseDate": "2022",
+      "publisher": "Bandai Namco Entertainment.",
+      "synopsis": "O NOVO RPG DE AÇÃO E FANTASIA. Levante-se, Maculado, e seja guiado pela graça para portar o poder do Anel Prístino e se tornar um Lorde Prístino nas Terras Intermédias.",
+      "image": "assets/image/jogos/eldenRing.png"
+    },
+    {
+      "id": 17,
+      "title": "Outlast 2",
+      "rating": "6,7/10",
+      "releaseDate": "2017",
+      "publisher": "Red Barrels.",
+      "synopsis": "Outlast 2 traz-te Sullivan Knoth e os seus seguidores, que abandonaram o nosso mundo cruel para fundar Temple Gate, uma cidade situada nas profundezas do deserto, longe da civilização.",
+      "image": "assets/image/jogos/outlast2.png"
+    }
+  ]
+  

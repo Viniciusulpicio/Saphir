@@ -23,14 +23,14 @@ class _HomeState extends State<Home> {
   ];
 
   final List<Map<String, dynamic>> imgList = [
-    {'image': 'assets/image/home/lego star wars 2.png', 'route': '/starWars'},
-    {'image': 'assets/image/home/life_is_strangw.png', 'route': '/lifeIs'},
-    {'image': 'assets/image/home/red dead.png', 'route': '/redDead'},
-    {'image': 'assets/image/home/eldenRing.png', 'route': '/eldenRing'},
+    {'image': 'assets/image/home/lego star wars 2.png', 'route': '/gameScreen', 'arguments': 1, },
+    {'image': 'assets/image/home/life_is_strangw.png', 'route': '/gameScreen', 'arguments': 4, },
+    {'image': 'assets/image/home/red dead.png', 'route': '/gameScreen', 'arguments': 7, },
+    {'image': 'assets/image/home/eldenRing.png', 'route': '/gameScreen', 'arguments': 16, },
   ];
 
     final List<Map<String, dynamic>> amigosList = [
-    {'image': 'assets/image/home/mineirinhoUltra.png', 'route': ''},
+    {'image': 'assets/image/home/mineirinhoUltra.png', 'route': '/gameScreen', 'arguments': 13},
     {'image': 'assets/image/home/goat.png', 'route': ''},
     {'image': 'assets/image/home/lizardsMust.png', 'route': ''},
     {'image': 'assets/image/home/ark.png', 'route': ''},
@@ -90,7 +90,9 @@ class _HomeState extends State<Home> {
                   const SizedBox(height: 10),
                   GestureDetector(
                     child: Image.asset("assets/image/home/Stardew Valley 2.png", ),
-                    onTap: () => Navigator.pushNamed(context, '/stardewValley'),
+                    onTap: () {
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 1); // Passando o ID do jogo
+                                },
                   ),
                   const SizedBox(height: 15),
                   Container(

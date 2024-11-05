@@ -21,7 +21,7 @@ class _TerrorState extends State<Terror> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/terror/silentHill.png', 'route': '/silentHill'},
+    {'image': 'assets/image/terror/silentHill.png',  'route': '/gameScreen', 'arguments': 12,},
     {'image': 'assets/image/terror/residentEvil.png', 'route': ''},
     {'image': 'assets/image/terror/layersFear.png', 'route': ''},
   ];
@@ -77,7 +77,7 @@ class _TerrorState extends State<Terror> {
                 GestureDetector(
                   child: Image.asset('assets/image/terror/outlast.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushNamed(context, '/outlast'); // Navega para a rota
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 17); // Passando o ID do jogo
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto

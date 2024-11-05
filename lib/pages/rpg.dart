@@ -77,7 +77,7 @@ class _RpgState extends State<Rpg> {
                 GestureDetector(
                   child: Image.asset('assets/image/rpg/eldenRing.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushNamed(context, '/eldenRing'); // Navega para a rota
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 16); // Passando o ID do jogo
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto

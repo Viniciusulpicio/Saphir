@@ -21,7 +21,7 @@ class _SimulacaoState extends State<Simulacao> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/simulacao/euroTruck.png', 'route': '/'},
+    {'image': 'assets/image/simulacao/euroTruck.png', 'route': ''},
     {'image': 'assets/image/simulacao/theSims3.png', 'route': ''},
     {'image': 'assets/image/simulacao/theSims2.png', 'route': ''},
   ];
@@ -77,7 +77,7 @@ class _SimulacaoState extends State<Simulacao> {
                 GestureDetector(
                   child: Image.asset('assets/image/simulacao/theSims4.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushNamed(context, '/theSims4'); // Navega para a rota
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 11); // Passando o ID do jogo
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto

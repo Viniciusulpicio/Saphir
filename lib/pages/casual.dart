@@ -77,7 +77,8 @@ class _CasualState extends State<Casual> {
                 GestureDetector(
                   child: Image.asset('assets/image/casual/bloonsTD.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushNamed(context, '/bloondTD'); // Navega para a rota
+                                                      Navigator.pushNamed(context, '/gameScreen', arguments: 9); // Passando o ID do jogo
+
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto

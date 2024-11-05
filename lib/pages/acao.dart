@@ -77,7 +77,8 @@ class _AcaoState extends State<Acao> {
                 GestureDetector(
                   child: Image.asset('assets/image/acao/theLastUs.png', scale: 0.95,), // Imagem do top 1
                   onTap: () {
-                    Navigator.pushNamed(context, '/theLastUs', ); // Navega para a rota
+                                                      Navigator.pushNamed(context, '/gameScreen', arguments: 17); // Passando o ID do jogo
+
                   },
                 ),
                 const SizedBox(height: 20), // Espaço entre a imagem e o texto
