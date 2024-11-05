@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                   GestureDetector(
                     child: Image.asset("assets/image/home/Stardew Valley 2.png", ),
                     onTap: () {
-                                  Navigator.pushNamed(context, '/gameScreen', arguments: 1); // Passando o ID do jogo
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 3); // Passando o ID do jogo
                                 },
                   ),
                   const SizedBox(height: 15),

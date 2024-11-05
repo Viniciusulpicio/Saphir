@@ -48,11 +48,11 @@ class MyApp extends StatelessWidget {
       routes: {
 
 
-                '/gameScreen': (context) => GameScreen(gameId: ModalRoute.of(context)!.settings.arguments as int),
 
 
         //geral
         // '/' : (context) => const Splash(),
+        '/gameScreen': (context) => GameScreen(gameId: ModalRoute.of(context)!.settings.arguments as int),
         '/login': (context) => const Login(),
         '/cadastro': (context) => const Cadastro(),
         '/home': (context) => const Home(),
