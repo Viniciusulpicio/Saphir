@@ -56,7 +56,7 @@ class _MineirinhoUltraState extends State<MineirinhoUltra> {
                   children: [
                     SizedBox(
                       child: Image.asset(
-                        'assets/image/jogos/mineirinhoUltra.png',
+                        'assets/image/jogos/mineirinhoUtra.png',
                       ),
                     ),
                     const SizedBox(height: 20),
