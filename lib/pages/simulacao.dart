@@ -21,7 +21,7 @@ class _SimulacaoState extends State<Simulacao> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/simulacao/euroTruck.png', 'route': '/'},
+    {'image': 'assets/image/simulacao/euroTruck.png', 'route': ''},
     {'image': 'assets/image/simulacao/theSims3.png', 'route': ''},
     {'image': 'assets/image/simulacao/theSims2.png', 'route': ''},
   ];
@@ -69,6 +69,7 @@ class _SimulacaoState extends State<Simulacao> {
               toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
+
             body: SingleChildScrollView(
               child: Column(
                 children: [

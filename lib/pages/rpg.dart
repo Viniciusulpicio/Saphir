@@ -69,6 +69,7 @@ class _RpgState extends State<Rpg> {
               toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
+
             body: SingleChildScrollView(
               child: Column(
                 children: [

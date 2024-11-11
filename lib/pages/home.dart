@@ -23,11 +23,12 @@ class _HomeState extends State<Home> {
   ];
 
   final List<Map<String, dynamic>> imgList = [
-    {'image': 'assets/image/home/lego star wars 2.png', 'route': '/starWars'},
-    {'image': 'assets/image/home/life_is_strangw.png', 'route': '/lifeIs'},
-    {'image': 'assets/image/home/red dead.png', 'route': '/redDead'},
-    {'image': 'assets/image/home/eldenRing.png', 'route': '/eldenRing'},
+    {'image': 'assets/image/home/lego star wars 2.png', 'route': '/gameScreen', 'arguments': 1},
+    {'image': 'assets/image/home/life_is_strangw.png', 'route': '/gameScreen', 'arguments': 4},
+    {'image': 'assets/image/home/red dead.png', 'route': '/gameScreen', 'arguments': 7},
+    {'image': 'assets/image/home/eldenRing.png', 'route': '/gameScreen', 'arguments': 16},
   ];
+
 
   final List<Map<String, dynamic>> amigosList = [
     {'image': 'assets/image/home/mineirinhoUltra.png', 'route': ''},
@@ -139,6 +140,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   const SizedBox(height: 20),
+
                   _buildSectionTitle("MAIS JOGADOS:", isTablet),
                   _buildHorizontalCarousel(imgList, isTablet),
                   _buildSectionTitle("MAIS JOGADOS PELOS AMIGOS:", isTablet),

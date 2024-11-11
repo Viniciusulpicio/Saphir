@@ -69,6 +69,7 @@ class _LutaState extends State<Luta> {
               toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
+
             body: SingleChildScrollView(
               child: Column(
                 children: [

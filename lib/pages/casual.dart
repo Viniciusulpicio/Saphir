@@ -70,6 +70,7 @@ class _CasualState extends State<Casual> {
               toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
+
             body: SingleChildScrollView(
               child: Column(
                 children: [

@@ -66,7 +66,7 @@ class _SalvosState extends State<Salvos> {
               
                     GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/bloondTD');
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 9); // Passando o ID do jogo
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -143,7 +143,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/lifeIs');
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 4); // Passando o ID do jogo
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -221,7 +221,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/stardewValley');
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 3); // Passando o ID do jogo
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -299,7 +299,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/elderScrolls');
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 10); // Passando o ID do jogo
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row
@@ -377,7 +377,7 @@ class _SalvosState extends State<Salvos> {
               
                       GestureDetector(
                         onTap: () {
-                           Navigator.pushNamed(context, '/theSims4');
+                                  Navigator.pushNamed(context, '/gameScreen', arguments: 11); // Passando o ID do jogo
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center, // Centraliza todo o conteúdo no Row

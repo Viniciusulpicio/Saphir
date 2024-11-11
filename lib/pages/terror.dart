@@ -21,7 +21,7 @@ class _TerrorState extends State<Terror> {
   }
 
         final List<Map<String, dynamic>> principais = [
-    {'image': 'assets/image/terror/silentHill.png', 'route': '/silentHill'},
+    {'image': 'assets/image/terror/silentHill.png',  'route': '/gameScreen', 'arguments': 12,},
     {'image': 'assets/image/terror/residentEvil.png', 'route': ''},
     {'image': 'assets/image/terror/layersFear.png', 'route': ''},
   ];
@@ -69,6 +69,7 @@ class _TerrorState extends State<Terror> {
               toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
+
             body: SingleChildScrollView(
               child: Column(
                 children: [
