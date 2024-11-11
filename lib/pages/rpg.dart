@@ -34,138 +34,143 @@ class _RpgState extends State<Rpg> {
 
   @override
   Widget build(BuildContext context) {
+        final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Stack(
       
-      children: [
-                        const SizedBox(height: 16), // Espaço entre a imagem e o texto
-
+            children: [
+        const SizedBox(height: 16),
         Container(
-          color: const Color.fromARGB(255, 0, 8, 20), // Fundo preto por trás do gradiente
+          color: const Color.fromARGB(255, 0, 8, 20),
         ),
         GradientBackground(
-          child: Scaffold(       
-            backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
             appBar: AppBar(
-              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+              automaticallyImplyLeading: false,
               title: Padding(
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0,),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: Row(
                   children: [
-                    const Expanded(
-                      child: BarraPesquisaWidget(),
-                    ),
-                    const Padding(padding: EdgeInsets.only(left: 5.0,),),
-
-                    
+                    const Expanded(child: BarraPesquisaWidget()),
+                    SizedBox(width: screenWidth * 0.01),
                     GestureDetector(
-                      child: Image.asset("assets/image/home/raio.png",
-                    height: 35,),
-                    onTap: () => Navigator.pushNamed(context, '/plano'),
+                      child: Image.asset(
+                        "assets/image/home/raio.png",
+                        height: screenHeight * 0.05,
+                      ),
+                      onTap: () => Navigator.pushNamed(context, '/plano'),
                     )
                   ],
                 ),
               ),
-              backgroundColor: Colors.transparent, // Faz o AppBar ser transparente
+              backgroundColor: Colors.transparent,
               elevation: 0,
-              toolbarHeight: 80, // Ajusta a altura do AppBar
+              toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
-            body: Column(
-              children: [
-                                const SizedBox(height: 10),
 
-                GestureDetector(
-                  child: Image.asset('assets/image/rpg/eldenRing.png', scale: 0.95,), // Imagem do top 1
-                  onTap: () {
-                                  Navigator.pushNamed(context, '/gameScreen', arguments: 16); // Passando o ID do jogo
-                  },
-                ),
-                const SizedBox(height: 20), // Espaço entre a imagem e o texto
-
-                Container(
-                  margin: const EdgeInsets.only(left: 45.0), // Alinhado com o grid
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'PRINCIPAIS TÍTULOS: ',                     
-                    style: TextStyle(
-                        color: Colors.white, fontFamily: "DaysOne", fontSize: 18),)),
-
-                // const SizedBox(height: 10), // Espaço entre os textos
-                const SizedBox(height: 15), // Espaço entre a imagem e o texto
-
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 30.0), // Espaço abaixo do carrossel
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 25.0), // Espaçamento nas bordas do carrossel
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: principais.map((item) {
-                              return GestureDetector(
-                                onTap: () {
-                                  // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushNamed(context, item['route']);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.asset(
-                                      item['image'], // Usa o caminho da imagem
-                                      fit: BoxFit.cover, // Ajusta a imagem para cobrir todo o espaço disponível
-                                      width: 200, // Largura fixa para as imagens
-                                    ),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: screenHeight * 0.02),
+                  GestureDetector(
+                    child: Image.asset(
+                      'assets/image/rpg/eldenRing.png',
+                      width: screenWidth * 0.9, // Ocupa até metade da largura da tela
+                      height: screenHeight * 0.45, // Limita a altura da imagem para não ocupar muito espaço
+                      fit: BoxFit.contain,
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/bloondTD');
+                    },
+                  ),
+                  SizedBox(height: screenHeight * 0.03),
+                  Container(
+                    margin: EdgeInsets.only(left: screenWidth * 0.1),
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'PRINCIPAIS TÍTULOS: ',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "DaysOne",
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: screenHeight * 0.02),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.04),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: principais.map((item) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, item['route']);
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    item['image'],
+                                    fit: BoxFit.cover,
+                                    width: screenWidth * 0.5,
                                   ),
                                 ),
-                              );
-                            }).toList(),
-                          ),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),
-
-
-                                Container(
-                  margin: const EdgeInsets.only(left: 45.0), // Alinhado com o grid
-                  alignment: Alignment.centerLeft,
-                  child: const Text(
-                    'EM BREVE: ',                     
-                    style: TextStyle(
-                        color: Colors.white, fontFamily: "DaysOne", fontSize: 18),)),
-
-                // const SizedBox(height: 8), // Espaço entre os textos
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 30.0), // Espaço abaixo do carrossel
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 25.0), // Espaçamento nas bordas do carrossel
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: breve.map((item) {
-                              return GestureDetector(
-                                onTap: () {
-                                  // Navega para a rota especificada ao tocar na imagem
-                                  Navigator.pushNamed(context, item['route']);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Image.asset(
-                                      item['image'], // Usa o caminho da imagem
-                                      fit: BoxFit.cover, // Ajusta a imagem para cobrir todo o espaço disponível
-                                      width: 200, // Largura fixa para as imagens
-                                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: screenWidth * 0.1),
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'EM BREVE: ',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "DaysOne",
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.04),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: breve.map((item) {
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(context, item['route'], (route) => false);
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    item['image'],
+                                    fit: BoxFit.cover,
+                                    width: screenWidth * 0.5,
                                   ),
                                 ),
-                              );
-                            }).toList(),
-                          ),
+                              ),
+                            );
+                          }).toList(),
                         ),
                       ),
                     ),
-
-              ],
+                  ),
+                ],
+              ),
             ),
             bottomNavigationBar: navBar(
               currentIndex: _selectedIndex,
