@@ -6,6 +6,7 @@ import 'package:saphir/pages/editarPerfil.dart';
 import 'package:saphir/pages/jogos/game_scream.dart';
 import 'package:saphir/pages/luta.dart';
 import 'package:saphir/pages/novidades.dart';
+import 'package:saphir/pages/pesquisa.dart';
 import 'package:saphir/pages/plano.dart';
 import 'package:saphir/pages/rpg.dart';
 import 'package:saphir/pages/salvos.dart';
@@ -46,14 +47,11 @@ class MyApp extends StatelessWidget {
 
       initialRoute: "/home",
       routes: {
-
-
-
-
         //geral
-        // '/' : (context) => const Splash(),
+        '/' : (context) => const Splash(),
         '/gameScreen': (context) => GameScreen(gameId: ModalRoute.of(context)!.settings.arguments as int),
         '/login': (context) => const Login(),
+        '/pesquisa': (context) =>  GameListScreen(),
         '/cadastro': (context) => const Cadastro(),
         '/home': (context) => const Home(),
         '/configuracao': (context) => const Configuracao(),

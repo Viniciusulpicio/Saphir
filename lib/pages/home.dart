@@ -23,10 +23,10 @@ class _HomeState extends State<Home> {
   ];
 
   final List<Map<String, dynamic>> imgList = [
-    {'image': 'assets/image/home/lego star wars 2.png', 'route': '/gameScreen', 'arguments': 1, },
-    {'image': 'assets/image/home/life_is_strangw.png', 'route': '/gameScreen', 'arguments': 4, },
-    {'image': 'assets/image/home/red dead.png', 'route': '/gameScreen', 'arguments': 7, },
-    {'image': 'assets/image/home/eldenRing.png', 'route': '/gameScreen', 'arguments': 16, },
+    {'image': 'assets/image/home/lego star wars 2.png', 'route': '/gameScreen', 'arguments': 1},
+    {'image': 'assets/image/home/life_is_strangw.png', 'route': '/gameScreen', 'arguments': 4},
+    {'image': 'assets/image/home/red dead.png', 'route': '/gameScreen', 'arguments': 7},
+    {'image': 'assets/image/home/eldenRing.png', 'route': '/gameScreen', 'arguments': 16},
   ];
 
     final List<Map<String, dynamic>> amigosList = [
@@ -162,10 +162,15 @@ class _HomeState extends State<Home> {
                         child: Row(
                           children: imgList.map((item) {
                             return GestureDetector(
-                              onTap: () {
-                                // Navega para a rota especificada ao tocar na imagem
-                                Navigator.pushNamed(context, item['route']);
-                              },
+                            onTap: () {
+                              // Navegação para a rota com os argumentos
+                              Navigator.pushNamed(
+                                context,
+                                item['route'], // Use 'item['route']' diretamente
+                                arguments: item['arguments'], // Use 'item['arguments']' diretamente
+                              );
+                            },
+
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
                                 child: ClipRRect(
@@ -206,11 +211,15 @@ class _HomeState extends State<Home> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: amigosList.map((item) {
-                            return GestureDetector(
-                              onTap: () {
-                                // Navega para a rota especificada ao tocar na imagem
-                                Navigator.pushNamed(context, item['route']);
-                              },
+                              return GestureDetector(
+                            onTap: () {
+                                      // Navegação para a rota com os argumentos
+                                      Navigator.pushNamed(
+                                        context,
+                                        item['route'], // Use 'item['route']' diretamente
+                                        arguments: item['arguments'], // Use 'item['arguments']' diretamente
+                                      );
+                                    },
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
                                 child: ClipRRect(
@@ -253,9 +262,13 @@ class _HomeState extends State<Home> {
                           children: novidadeList.map((item) {
                             return GestureDetector(
                               onTap: () {
-                                // Navega para a rota especificada ao tocar na imagem
-                                Navigator.pushNamed(context, item['route']);
-                              },
+                                        // Navegação para a rota com os argumentos
+                                        Navigator.pushNamed(
+                                          context,
+                                          item['route'], // Use 'item['route']' diretamente
+                                          arguments: item['arguments'], // Use 'item['arguments']' diretamente
+                                        );
+                                      },
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento entre imagens
                                 child: ClipRRect(

@@ -6,7 +6,9 @@
       "releaseDate": "2022",
       "publisher": "Warner Bros. Entertainment",
       "synopsis": "Reviva os momentos icônicos da saga Skywalker, desde os episódios I a IX, com personagens lendários como Luke Skywalker, Darth Vader, e Rey, em uma aventura LEGO® cheia de ação, quebra-cabeças e combates.",
-      "image": "assets/image/jogos/legoStarWars.png"
+      "image": "assets/image/jogos/legoStarWars.png",
+      "route": "/videoStarWars"
+
     },
     {
       "id": 2,
@@ -24,7 +26,10 @@
       "releaseDate": "26/Fev/2016",
       "publisher": "ConcernedApe",
       "synopsis": "Deixe a vida agitada da cidade e comece uma nova vida em uma fazenda em Stardew Valley. Cultive, pesque, crie animais, faça amigos e explore cavernas cheias de mistérios nesta encantadora simulação de fazenda.",
-      "image": "assets/image/jogos/stardewValley.png"
+      "image": "assets/image/jogos/stardewValley.png",
+      "video": "assets/video/stardewVideo.mp4",
+      "route": "/videoStardew"
+
     },
     {
       "id": 4,

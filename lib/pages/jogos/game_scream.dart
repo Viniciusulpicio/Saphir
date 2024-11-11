@@ -16,6 +16,8 @@ class GameScreen extends StatefulWidget {
 class _GameScreenState extends State<GameScreen> {
   int _selectedIndex = 0;
   Map<String, dynamic>? gameData;
+  String buttonText = "Carregando...";
+  String route = "/defaultRoute";
 
   void _onItemTapped(int index) {
     setState(() {
@@ -29,7 +31,18 @@ class _GameScreenState extends State<GameScreen> {
 
     setState(() {
       gameData = data.firstWhere((game) => game['id'] == widget.gameId);
+      loadButtonData();
     });
+  }
+
+  void loadButtonData() {
+    // Obtendo os dados do JSON do jogo carregado
+    if (gameData != null) {
+      setState(() {
+        buttonText = gameData!['button_text'] ?? "JOGAR";
+        route = gameData!['route'] ?? "/defaultRoute";
+      });
+    }
   }
 
   @override
@@ -61,7 +74,7 @@ class _GameScreenState extends State<GameScreen> {
               title: Center(
                 child: Container(
                   margin: EdgeInsets.only(top: screenHeight * 0.05),
-                  child: Center(
+                  child: Flexible(
                     child: Text(
                       gameData!['title'],
                       style: TextStyle(
@@ -69,8 +82,8 @@ class _GameScreenState extends State<GameScreen> {
                         fontSize: 22 * textScaleFactor,
                         fontFamily: 'DaysOne',
                       ),
-                                                    overflow: TextOverflow.ellipsis, // Adiciona "..." no final
-
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                     ),
                   ),
                 ),
@@ -90,15 +103,18 @@ class _GameScreenState extends State<GameScreen> {
                       SizedBox(height: screenHeight * 0.02),
                       Row(
                         children: [
-                          Text(
-                            gameData!['title'],
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18 * textScaleFactor,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'DaysOne',
+                          Flexible(
+                            child: Text(
+                              gameData!['title'],
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18 * textScaleFactor,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'DaysOne',
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
                             ),
-                            overflow: TextOverflow.ellipsis, // Adiciona "..." no final
                           ),
                           const Icon(
                             Icons.star,
@@ -194,7 +210,9 @@ class _GameScreenState extends State<GameScreen> {
                       Column(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, route);
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color.fromARGB(255, 41, 144, 43),
                               shape: RoundedRectangleBorder(
@@ -207,11 +225,11 @@ class _GameScreenState extends State<GameScreen> {
                               ),
                             ),
                             child: Text(
-                              'JOGAR',
-                              style: TextStyle(
-                                fontSize: 16 * textScaleFactor,
+                              buttonText,
+                              style: const TextStyle(
+                                fontSize: 16,
                                 color: Colors.white,
-                                fontFamily: 'DaysOne',
+                                fontFamily: 'DaynsOne',
                               ),
                             ),
                           ),
