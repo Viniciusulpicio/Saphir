@@ -127,7 +127,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 40),
+                      padding: EdgeInsets.only(right: screenWidth < 600 ? 30.0 : 80.0),
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: GestureDetector(
@@ -171,8 +171,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                         InkWell(
                           onTap: () {},
                           child: SizedBox(
-                            width: 60,
-                            height: 60,
+                            width: screenWidth < 600 ? 50 : 60,
+                            height: screenWidth < 600 ? 50 : 60,
                             child: Image.asset('assets/image/login/facebook.png'),
                           ),
                         ),
@@ -180,8 +180,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                         InkWell(
                           onTap: () {},
                           child: SizedBox(
-                            width: 60,
-                            height: 60,
+                            width: screenWidth < 600 ? 50 : 60,
+                            height: screenWidth < 600 ? 50 : 60,
                             child: Image.asset('assets/image/login/apple.png'),
                           ),
                         ),
@@ -189,8 +189,8 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                         InkWell(
                           onTap: () {},
                           child: SizedBox(
-                            width: 60,
-                            height: 60,
+                            width: screenWidth < 600 ? 50 : 60,
+                            height: screenWidth < 600 ? 50 : 60,
                             child: Image.asset('assets/image/login/google.png'),
                           ),
                         ),

@@ -12,13 +12,10 @@ class _CadastroState extends State<Cadastro> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
-
-  // Chave Global para o formulário
   final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    // Define largura e altura da tela
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
@@ -26,7 +23,7 @@ class _CadastroState extends State<Cadastro> {
       backgroundColor: const Color.fromARGB(255, 30, 30, 30),
       body: Center(
         child: Form(
-          key: _formKey, // Associar a chave ao Form
+          key: _formKey,
           child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
@@ -36,7 +33,7 @@ class _CadastroState extends State<Cadastro> {
                     "saphir",
                     style: TextStyle(
                       color: const Color.fromARGB(255, 23, 44, 228),
-                      fontSize: screenWidth * 0.12, // Tamanho da fonte responsivo
+                      fontSize: screenWidth * 0.15,
                       fontFamily: 'DaysOne',
                     ),
                   ),
@@ -45,7 +42,7 @@ class _CadastroState extends State<Cadastro> {
                     "Cadastre-se para jogar com seus amigos.",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: screenWidth * 0.05, // Tamanho da fonte responsivo
+                      fontSize: screenWidth * 0.05,
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
@@ -55,8 +52,8 @@ class _CadastroState extends State<Cadastro> {
                     },
                     style: OutlinedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
-                        horizontal: screenWidth * 0.25,
-                        vertical: screenHeight * 0.02,
+                        horizontal: screenWidth * 0.2,
+                        vertical: screenHeight * 0.015,
                       ),
                       side: const BorderSide(color: Colors.white, width: 2),
                       shape: RoundedRectangleBorder(
@@ -83,26 +80,18 @@ class _CadastroState extends State<Cadastro> {
                   SizedBox(height: screenHeight * 0.04),
                   Row(
                     children: <Widget>[
-                      const Expanded(
-                        child: Divider(
-                          color: Colors.white,
-                          indent: 5,
-                          endIndent: 5,
-                        ),
+                      Expanded(
+                        child: Divider(color: Colors.white, indent: screenWidth * 0.02, endIndent: screenWidth * 0.02),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.07),
                         child: Text(
                           'ou',
                           style: TextStyle(fontSize: screenWidth * 0.05, color: Colors.white),
                         ),
                       ),
-                      const Expanded(
-                        child: Divider(
-                          color: Colors.white,
-                          indent: 5,
-                          endIndent: 5,
-                        ),
+                      Expanded(
+                        child: Divider(color: Colors.white, indent: screenWidth * 0.02, endIndent: screenWidth * 0.02),
                       ),
                     ],
                   ),
@@ -128,7 +117,7 @@ class _CadastroState extends State<Cadastro> {
                         return "O e-mail está muito curto";
                       }
                       if (!email.contains("@")) {
-                        return "O e-mail não é valido";
+                        return "O e-mail não é válido";
                       }
                       return null;
                     },
@@ -220,14 +209,20 @@ class _CadastroState extends State<Cadastro> {
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: screenWidth * 0.3, vertical: screenHeight * 0.02),
-                        side: const BorderSide(color: Colors.white, width: 2),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        backgroundColor: const Color.fromARGB(255, 30, 30, 30)),
-                    child: Text("Cadastrar",
-                        style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04)),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.3,
+                        vertical: screenHeight * 0.02,
+                      ),
+                      side: const BorderSide(color: Colors.white, width: 2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      backgroundColor: const Color.fromARGB(255, 30, 30, 30),
+                    ),
+                    child: Text(
+                      "Cadastrar",
+                      style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+                    ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   GestureDetector(

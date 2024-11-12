@@ -32,14 +32,13 @@ class _TerrorState extends State<Terror> {
     {'image': 'assets/image/terror/pathologic.png', 'route': ''},
   ];
 
-  @override
+ @override
   Widget build(BuildContext context) {
-        final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+
     return Stack(
-      
-            children: [
-        const SizedBox(height: 16),
+      children: [
         Container(
           color: const Color.fromARGB(255, 0, 8, 20),
         ),
@@ -52,8 +51,9 @@ class _TerrorState extends State<Terror> {
                 padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: Row(
                   children: [
-                    const Expanded(child: BarraPesquisaWidget()),
-                    SizedBox(width: screenWidth * 0.01),
+                    const Expanded(
+                      child: BarraPesquisaWidget(),
+                    ),
                     GestureDetector(
                       child: Image.asset(
                         "assets/image/home/raio.png",
@@ -69,40 +69,38 @@ class _TerrorState extends State<Terror> {
               toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
-
-            body: SingleChildScrollView(
+            body: SingleChildScrollView( // Adiciona rolagem
               child: Column(
                 children: [
                   SizedBox(height: screenHeight * 0.02),
+
                   GestureDetector(
-                    child: Image.asset(
-                      'assets/image/terror/outlast.png',
-                      width: screenWidth * 0.9, // Ocupa até metade da largura da tela
-                      height: screenHeight * 0.45, // Limita a altura da imagem para não ocupar muito espaço
-                      fit: BoxFit.contain,
-                    ),
+                                      child: Image.asset('assets/image/terror/outlast.png', scale: 0.95),
+
                     onTap: () {
-                      Navigator.pushNamed(context, '/bloondTD');
+                      Navigator.pushNamed(context, '/gameScreen', arguments: 17);
                     },
                   ),
                   SizedBox(height: screenHeight * 0.03),
+
                   Container(
-                    margin: EdgeInsets.only(left: screenWidth * 0.1),
+                    margin: EdgeInsets.only(left: screenWidth * 0.12),
                     alignment: Alignment.centerLeft,
                     child: const Text(
                       'PRINCIPAIS TÍTULOS: ',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "DaysOne",
-                        fontSize: 18,
-                      ),
+                          color: Colors.white,
+                          fontFamily: "DaysOne",
+                          fontSize: 18),
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
+
                   Padding(
-                    padding: EdgeInsets.only(bottom: screenHeight * 0.04),
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.05),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
+                      margin:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.07),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -112,7 +110,8 @@ class _TerrorState extends State<Terror> {
                                 Navigator.pushNamed(context, item['route']);
                               },
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: screenWidth * 0.03),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image.asset(
@@ -128,32 +127,35 @@ class _TerrorState extends State<Terror> {
                       ),
                     ),
                   ),
+
                   Container(
-                    margin: EdgeInsets.only(left: screenWidth * 0.1),
+                    margin: EdgeInsets.only(left: screenWidth * 0.12),
                     alignment: Alignment.centerLeft,
                     child: const Text(
                       'EM BREVE: ',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: "DaysOne",
-                        fontSize: 18,
-                      ),
+                          color: Colors.white,
+                          fontFamily: "DaysOne",
+                          fontSize: 18),
                     ),
                   ),
+
                   Padding(
-                    padding: EdgeInsets.only(bottom: screenHeight * 0.04),
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.05),
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.06),
+                      margin:
+                          EdgeInsets.symmetric(horizontal: screenWidth * 0.07),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: breve.map((item) {
                             return GestureDetector(
                               onTap: () {
-                                Navigator.pushNamedAndRemoveUntil(context, item['route'], (route) => false);
+                                Navigator.pushNamed(context, item['route']);
                               },
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: screenWidth * 0.03),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image.asset(

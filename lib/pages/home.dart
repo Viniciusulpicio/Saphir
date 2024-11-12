@@ -29,9 +29,8 @@ class _HomeState extends State<Home> {
     {'image': 'assets/image/home/eldenRing.png', 'route': '/gameScreen', 'arguments': 16},
   ];
 
-
   final List<Map<String, dynamic>> amigosList = [
-    {'image': 'assets/image/home/mineirinhoUltra.png', 'route': ''},
+    {'image': 'assets/image/home/mineirinhoUltra.png', 'route': '/gameScreen', 'arguments': 13},
     {'image': 'assets/image/home/goat.png', 'route': ''},
     {'image': 'assets/image/home/lizardsMust.png', 'route': ''},
     {'image': 'assets/image/home/ark.png', 'route': ''},
@@ -52,8 +51,8 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final isTablet = screenWidth > 600; // Verifica se é uma tela maior
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     return Stack(
       children: [
@@ -66,39 +65,40 @@ class _HomeState extends State<Home> {
             appBar: AppBar(
               automaticallyImplyLeading: false,
               title: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                 child: Row(
                   children: [
                     const Expanded(
                       child: BarraPesquisaWidget(),
                     ),
-                    const SizedBox(width: 5),
                     GestureDetector(
-                      child: Image.asset("assets/image/home/raio.png", height: 35),
+                      child: Image.asset(
+                        "assets/image/home/raio.png",
+                        height: screenHeight * 0.04,
+                      ),
                       onTap: () => Navigator.pushNamed(context, '/plano'),
-                    )
+                    ),
                   ],
                 ),
               ),
               backgroundColor: Colors.transparent,
               elevation: 0,
-              toolbarHeight: isTablet ? 100 : 80, // Altura do AppBar para telas maiores
+              toolbarHeight: screenHeight * 0.1,
               centerTitle: true,
             ),
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(height: 10),
+                  SizedBox(height: screenHeight * 0.02),
                   GestureDetector(
-                    child: Image.asset(
-                      "assets/image/home/Stardew Valley 2.png",
-                      width: isTablet ? screenWidth * 0.7 : screenWidth * 0.9, // Ajusta a largura
-                    ),
-                    onTap: () => Navigator.pushNamed(context, '/stardewValley'),
+                    child: Image.asset("assets/image/home/Stardew Valley 2.png"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/gameScreen', arguments: 3);
+                    },
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: screenHeight * 0.02),
                   Container(
-                    margin: EdgeInsets.only(left: isTablet ? 60.0 : 45.0),
+                    margin: EdgeInsets.only(left: screenWidth * 0.1),
                     alignment: Alignment.centerLeft,
                     child: const Text(
                       "NAVEGUE POR CATEGORIA:",
@@ -109,14 +109,14 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: screenHeight * 0.01),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: isTablet ? 60.0 : 40.0),
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
                     child: GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: isTablet ? 3 : 2, // Mais colunas para telas maiores
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
                         mainAxisSpacing: 10,
                         crossAxisSpacing: 10,
                         childAspectRatio: 3.0,
@@ -139,14 +139,13 @@ class _HomeState extends State<Home> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 20),
-
-                  _buildSectionTitle("MAIS JOGADOS:", isTablet),
-                  _buildHorizontalCarousel(imgList, isTablet),
-                  _buildSectionTitle("MAIS JOGADOS PELOS AMIGOS:", isTablet),
-                  _buildHorizontalCarousel(amigosList, isTablet),
-                  _buildSectionTitle("NOVIDADES:", isTablet),
-                  _buildHorizontalCarousel(novidadeList, isTablet),
+                  SizedBox(height: screenHeight * 0.03),
+                  _buildSectionTitle("MAIS JOGADOS:", screenWidth),
+                  _buildHorizontalCarousel(imgList, screenWidth, screenHeight, context),
+                  _buildSectionTitle("MAIS JOGADOS PELOS AMIGOS:", screenWidth),
+                  _buildHorizontalCarousel(amigosList, screenWidth, screenHeight, context),
+                  _buildSectionTitle("NOVIDADES:", screenWidth),
+                  _buildHorizontalCarousel(novidadeList, screenWidth, screenHeight, context),
                 ],
               ),
             ),
@@ -160,9 +159,9 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _buildSectionTitle(String title, bool isTablet) {
+  Widget _buildSectionTitle(String title, double screenWidth) {
     return Container(
-      margin: EdgeInsets.only(left: isTablet ? 60.0 : 45.0),
+      margin: EdgeInsets.only(left: screenWidth * 0.1),
       alignment: Alignment.centerLeft,
       child: Text(
         title,
@@ -175,28 +174,30 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget _buildHorizontalCarousel(List<Map<String, dynamic>> itemList, bool isTablet) {
+  Widget _buildHorizontalCarousel(List<Map<String, dynamic>> itemList, double screenWidth, double screenHeight, BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
+      padding: EdgeInsets.only(bottom: screenHeight * 0.02),
       child: Container(
-        height: 175.0,
-        margin: EdgeInsets.symmetric(horizontal: isTablet ? 35.0 : 25.0),
+        height: screenHeight * 0.2,
+        margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: itemList.map((item) {
               return GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, item['route']);
+                  if (item['route'].isNotEmpty) {
+                    Navigator.pushNamed(context, item['route'], arguments: item['arguments']);
+                  }
                 },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.025),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       item['image'],
                       fit: BoxFit.cover,
-                      width: isTablet ? 250 : 200, // Ajusta a largura para telas maiores
+                      width: screenWidth * 0.45,
                     ),
                   ),
                 ),
