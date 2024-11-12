@@ -79,7 +79,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           if (email == "" || email == null) {
                             return "O email não pode estar vazio";
                           }
-                          if (email.length < 6) {
+                          if (email.length < 2) {
                             return "O e-mail está muito curto";
                           }
                           if (!email.contains("@")) {
@@ -119,7 +119,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           if (senha == null || senha.isEmpty) {
                             return "A senha não pode estar vazia";
                           }
-                          if (senha.length < 8) {
+                          if (senha.length < 6) {
                             return "A senha deve ter pelo menos 8 caracteres";
                           }
                           return null;
