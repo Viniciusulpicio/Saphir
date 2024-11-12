@@ -94,6 +94,7 @@ Padding(
         Expanded(
           child: TextField(
             controller: searchController,
+            autofocus: true,
             decoration: const InputDecoration(
               hintText: 'Pesquise...',
               hintStyle: TextStyle(color: Colors.grey),
@@ -146,10 +147,21 @@ Padding(
                             game['title'],
                             style: const TextStyle(color: Colors.white), // Título em branco
                           ),
-                          subtitle: Text(
-                            game['rating'],
-                            style: const TextStyle(color: Colors.white), // Subtítulo em branco
+                          subtitle: Row(
+                            children: [
+                              const Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: 20,
+                              ),
+                              const SizedBox(width: 4), // Espaçamento entre o ícone e o texto
+                              Text(
+                                game['rating'],
+                                style: const TextStyle(color: Colors.white), // Subtítulo em branco
+                              ),
+                            ],
                           ),
+
                           onTap: () {
                             // Passando o ID do jogo como argumento para a próxima tela
                             Navigator.pushNamed(

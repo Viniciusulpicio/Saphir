@@ -11,6 +11,11 @@ class Selecioneconta extends StatefulWidget {
 class _SelecionecontaState extends State<Selecioneconta> {
   @override
   Widget build(BuildContext context) {
+    // Obtendo a largura da tela para ajustar o layout
+    double screenWidth = MediaQuery.of(context).size.width;
+    int crossAxisCount = screenWidth < 600 ? 2 : 3; // 2 colunas para telas pequenas, 3 para maiores
+    double imageSize = screenWidth < 600 ? 120 : 150; // Ajusta o tamanho das imagens
+
     return Stack(
       children: [
         Container(
@@ -20,8 +25,7 @@ class _SelecionecontaState extends State<Selecioneconta> {
           child: Scaffold(
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
-                              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
-
+              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
               title: Container(
                 margin: const EdgeInsets.only(top: 40), // Adiciona margem acima do título
                 child: const Text(
@@ -57,18 +61,22 @@ class _SelecionecontaState extends State<Selecioneconta> {
                 Expanded(
                   child: Center(
                     child: GridView.count(
-                      crossAxisCount: 2, // Duas colunas
-                      crossAxisSpacing: 1, // Espaço entre as colunas
-                      mainAxisSpacing: 1, // Espaço entre as linhas
-                      shrinkWrap: true, // Permite que o GridView ocupe o menor espaço possível
-                      physics: const NeverScrollableScrollPhysics(), // Desativa o scroll do GridView
+                      crossAxisCount: crossAxisCount, // Colunas ajustadas dinamicamente
+                      crossAxisSpacing: 10, // Espaço entre as colunas
+                      mainAxisSpacing: 10, // Espaço entre as linhas
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       padding: const EdgeInsets.all(20),
                       children: [
                         GestureDetector(
                           onTap: () => {Navigator.pushNamed(context, '/conta')},
                           child: Column(
                             children: [
-                              Image.asset("assets/image/selecioneConta/canelinha.png", height: 120, width: 120),
+                              Image.asset(
+                                "assets/image/selecioneConta/canelinha.png",
+                                height: imageSize,
+                                width: imageSize,
+                              ),
                               const SizedBox(height: 8),
                               const Text(
                                 "caanelinha",
@@ -79,7 +87,11 @@ class _SelecionecontaState extends State<Selecioneconta> {
                         ),
                         Column(
                           children: [
-                            Image.asset("assets/image/selecioneConta/pedrinho.png", height: 120, width: 120),
+                            Image.asset(
+                              "assets/image/selecioneConta/pedrinho.png",
+                              height: imageSize,
+                              width: imageSize,
+                            ),
                             const SizedBox(height: 8),
                             const Text(
                               "pedrinho26",
@@ -89,7 +101,11 @@ class _SelecionecontaState extends State<Selecioneconta> {
                         ),
                         Column(
                           children: [
-                            Image.asset("assets/image/selecioneConta/lindinha.png", height: 120, width: 120),
+                            Image.asset(
+                              "assets/image/selecioneConta/lindinha.png",
+                              height: imageSize,
+                              width: imageSize,
+                            ),
                             const SizedBox(height: 8),
                             const Text(
                               "lindinha333",
@@ -99,7 +115,11 @@ class _SelecionecontaState extends State<Selecioneconta> {
                         ),
                         Column(
                           children: [
-                            Image.asset("assets/image/selecioneConta/henryco.png", height: 120, width: 120),
+                            Image.asset(
+                              "assets/image/selecioneConta/henryco.png",
+                              height: imageSize,
+                              width: imageSize,
+                            ),
                             const SizedBox(height: 8),
                             const Text(
                               "henryco",

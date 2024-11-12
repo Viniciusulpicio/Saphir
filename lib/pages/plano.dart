@@ -20,19 +20,22 @@ class _PlanoState extends State<Plano> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 600; // Considera telas menores que 600px como pequenas
+
     return Stack(
       children: [
         Container(
-          color: const Color.fromARGB(255, 0, 8, 20), // Fundo preto por trás do gradiente
+          color: const Color.fromARGB(255, 0, 8, 20),
         ),
         GradientBackground(
           child: Scaffold(
-            backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
+            backgroundColor: Colors.transparent,
             appBar: AppBar(
-              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+              automaticallyImplyLeading: false,
               title: Center(
                 child: Container(
-                  margin: const EdgeInsets.only(top: 25), // Adiciona margem apenas acima do título
+                  margin: const EdgeInsets.only(top: 25),
                   child: const Text(
                     "Plano de Assinatura:",
                     style: TextStyle(
@@ -43,9 +46,9 @@ class _PlanoState extends State<Plano> {
                   ),
                 ),
               ),
-              backgroundColor: Colors.transparent, // Faz o AppBar também ser transparente
+              backgroundColor: Colors.transparent,
               elevation: 0,
-              toolbarHeight: 80, // Ajusta a altura do AppBar
+              toolbarHeight: 80,
             ),
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,12 +62,12 @@ class _PlanoState extends State<Plano> {
                 ),
                 const SizedBox(height: 60),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                  padding: EdgeInsets.symmetric(horizontal: isSmallScreen ? 20.0 : 60.0),
                   child: Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(130, 3, 4, 105), // Cor de fundo
-                      borderRadius: BorderRadius.circular(20), // Borda arredondada
+                      color: const Color.fromARGB(130, 3, 4, 105),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -91,8 +94,7 @@ class _PlanoState extends State<Plano> {
                               context: context,
                               builder: (BuildContext context) {
                                 Future.delayed(const Duration(seconds: 1), () {
-                                  // ignore: use_build_context_synchronously
-                                  Navigator.of(context).pop(); // Fecha o diálogo automaticamente após 1 segundo
+                                  Navigator.of(context).pop();
                                 });
                                 return AlertDialog(
                                   content: Image.asset('assets/image/plano/absolute.jfif'),
@@ -137,8 +139,8 @@ class _PlanoState extends State<Plano> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.8, // 80% da largura da tela
-                    padding: const EdgeInsets.all(20), // Aumente o padding para mais espaçamento
+                    width: isSmallScreen ? screenWidth * 0.9 : screenWidth * 0.8,
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(130, 3, 4, 105),
                       borderRadius: BorderRadius.circular(20),
@@ -168,10 +170,9 @@ class _PlanoState extends State<Plano> {
                     ),
                   ),
                 )
-
               ],
             ),
-                bottomNavigationBar: navBar(
+            bottomNavigationBar: navBar(
               currentIndex: _selectedIndex,
               onTap: _onItemTapped,
             ),
@@ -188,10 +189,10 @@ class _PlanoState extends State<Plano> {
         children: [
           Image.asset(
             'assets/image/plano/check.png',
-            width: 24, // Aumente o tamanho do ícone, se necessário
+            width: 24,
             height: 24,
           ),
-          const SizedBox(width: 12), // Aumente o espaçamento entre ícone e texto
+          const SizedBox(width: 12),
           Expanded(
             child: Text(
               text,
@@ -203,5 +204,4 @@ class _PlanoState extends State<Plano> {
       ),
     );
   }
-
 }
