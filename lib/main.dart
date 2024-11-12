@@ -59,9 +59,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/amigos",
+      initialRoute: "/",
       routes: {
-        // '/' : (context) => const Splash(),
+        '/' : (context) => const Splash(),
         '/login': (context) => const Login(),
         '/cadastro': (context) => const Cadastro(),
         '/home': (context) => const Home(),
@@ -71,6 +71,7 @@ class MyApp extends StatelessWidget {
         '/recuperarCodigo': (context) => const RecuperarSenhaCodigo(),
         '/recuperarEmail': (context) => const RecuperarSenhaEmail(),
         '/salvos': (context) => const Salvos(),
+        '/novidade' : (context) => const Novidades(),
         '/acao': (context) => const Acao(),
         '/casual': (context) => const Casual(),
         '/luta': (context) => const Luta(),
@@ -79,6 +80,9 @@ class MyApp extends StatelessWidget {
         '/terror': (context) => const Terror(),
         '/editarPerfil': (context) => const Editarperfil(),
         '/amigos': (context) => const Amigos(),
+        '/selecioneConta' : (context) => const Selecioneconta(),
+
+
         // jogos
         '/lifeIs': (context) => const LifeIsStrange(),
         '/redDead': (context) => const RedDead(),
@@ -97,6 +101,10 @@ class MyApp extends StatelessWidget {
         '/theLastUs': (context) => const TheLastUs(),
         '/theSims2': (context) => const TheSims2(),
         '/theSims4': (context) => const TheSims4(),
+
+
+        '/videoStardew' : (context) =>  StardewValleyVideo(), 
+        '/videoStarWars' : (context) =>  StarWarsVideo(),
       },
     );
   }
