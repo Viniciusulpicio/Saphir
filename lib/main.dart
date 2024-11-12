@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: "/home",
+      initialRoute: "/",
       routes: {
         //geral
         '/' : (context) => const Splash(),
