@@ -23,18 +23,23 @@ class _ContaState extends State<Conta> {
   Widget build(BuildContext context) {
     // Obtendo as dimensões da tela
     double screenWidth = MediaQuery.of(context).size.width;
-    bool isMobile = screenWidth < 600; // Verifica se a tela é menor que 600px (geralmente dispositivos móveis)
+    bool isMobile = screenWidth <
+        600; // Verifica se a tela é menor que 600px (geralmente dispositivos móveis)
 
     // Definindo o tamanho da fonte e espaçamentos com base na largura da tela
     double fontSize = isMobile ? 18 : 22; // Menor fonte para telas pequenas
-    double paddingHorizontal = isMobile ? 20 : 50;  // Mais padding em telas maiores
-    double buttonPaddingHorizontal = isMobile ? 25 : 35;  // Ajuste no padding dos botões
-    double buttonPaddingVertical = isMobile ? 12 : 15;  // Ajuste no padding vertical
+    double paddingHorizontal =
+        isMobile ? 20 : 50; // Mais padding em telas maiores
+    double buttonPaddingHorizontal =
+        isMobile ? 25 : 35; // Ajuste no padding dos botões
+    double buttonPaddingVertical =
+        isMobile ? 12 : 15; // Ajuste no padding vertical
 
     return Stack(
       children: [
         Container(
-          color: const Color.fromARGB(255, 0, 8, 20), // Fundo preto por trás do gradiente
+          color: const Color.fromARGB(
+              255, 0, 8, 20), // Fundo preto por trás do gradiente
         ),
         GradientBackground(
           child: Scaffold(
@@ -42,6 +47,7 @@ class _ContaState extends State<Conta> {
 
             // AppBar
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40),
@@ -49,7 +55,8 @@ class _ContaState extends State<Conta> {
                     'Conta',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: fontSize, // Usando a variável de tamanho de fonte
+                      fontSize:
+                          fontSize, // Usando a variável de tamanho de fonte
                       fontFamily: 'DaysOne',
                     ),
                   ),
@@ -63,19 +70,20 @@ class _ContaState extends State<Conta> {
             // Body
             body: Center(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: paddingHorizontal), // Ajuste no padding
+                padding: EdgeInsets.symmetric(
+                    horizontal: paddingHorizontal), // Ajuste no padding
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(context, '/selecioneConta');
                       },
                       child: SizedBox(
-                        child: Image.asset('assets/image/conta/acessar_contas.png'),
+                        child: Image.asset(
+                            'assets/image/conta/acessar_contas.png'),
                       ),
                     ),
-
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -84,7 +92,6 @@ class _ContaState extends State<Conta> {
                           children: [
                             Image.asset('assets/image/conta/usuario_conta.png'),
                             const SizedBox(width: 10),
-
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -94,17 +101,19 @@ class _ContaState extends State<Conta> {
                                       'caanelinha',
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: isMobile ? 20 : 24, // Ajuste do tamanho da fonte
+                                        fontSize: isMobile
+                                            ? 20
+                                            : 24, // Ajuste do tamanho da fonte
                                       ),
                                     ),
                                     const SizedBox(width: 3),
-
                                     GestureDetector(
-                                      onTap: (){
-                                        Navigator.pushNamed(context, '/plano');
-                                      },
-                                      child: Image.asset('assets/image/conta/raio_conta.png')
-                                      ),
+                                        onTap: () {
+                                          Navigator.pushNamed(
+                                              context, '/plano');
+                                        },
+                                        child: Image.asset(
+                                            'assets/image/conta/raio_conta.png')),
                                   ],
                                 ),
                                 Row(
@@ -113,12 +122,14 @@ class _ContaState extends State<Conta> {
                                       'givas',
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: isMobile ? 16 : 19, // Ajuste do tamanho da fonte
+                                        fontSize: isMobile
+                                            ? 16
+                                            : 19, // Ajuste do tamanho da fonte
                                       ),
                                     ),
                                     const SizedBox(width: 3),
-
-                                    Image.asset('assets/image/conta/brasil.png'),
+                                    Image.asset(
+                                        'assets/image/conta/brasil.png'),
                                   ],
                                 ),
                               ],
@@ -126,7 +137,6 @@ class _ContaState extends State<Conta> {
                           ],
                         ),
                         const SizedBox(height: 10),
-
                         Container(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Column(
@@ -146,57 +156,56 @@ class _ContaState extends State<Conta> {
                         ),
                         const SizedBox(height: 10),
                         Row(
-                          mainAxisAlignment: isMobile ? MainAxisAlignment.center : MainAxisAlignment.start,
+                          mainAxisAlignment: isMobile
+                              ? MainAxisAlignment.center
+                              : MainAxisAlignment.start,
                           children: [
-                            GestureDetector(
-                              onTap: (){
+                            ElevatedButton(
+                              onPressed: () {
                                 Navigator.pushNamed(context, '/editarPerfil');
+                                buttonEnterClick();
                               },
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  buttonEnterClick();
-                                },
-                                style: OutlinedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: buttonPaddingHorizontal, vertical: buttonPaddingVertical),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15)),
-                                  backgroundColor: const Color.fromARGB(255, 1, 7, 45),
-                                ),
-                                child: const Text(
-                                  "Editar Perfil",
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                                ),
+                              style: OutlinedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: buttonPaddingHorizontal,
+                                    vertical: buttonPaddingVertical),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15)),
+                                backgroundColor:
+                                    const Color.fromARGB(255, 1, 7, 45),
+                              ),
+                              child: const Text(
+                                "Editar Perfil",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
-
                             const SizedBox(width: 20),
-
-                            GestureDetector(
-                              onTap: (){
+                            ElevatedButton(
+                              onPressed: () {
+                                buttonEnterClick();
                                 Navigator.pushNamed(context, '/amigos');
                               },
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  buttonEnterClick();
-                                },
-                                style: OutlinedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: buttonPaddingHorizontal, vertical: buttonPaddingVertical),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15)),
-                                  backgroundColor: const Color.fromARGB(255, 1, 7, 45),
-                                ),
-                                child: const Text(
-                                  "Amigos",
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                                ),
+                              style: OutlinedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: buttonPaddingHorizontal,
+                                    vertical: buttonPaddingVertical),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(15)),
+                                backgroundColor:
+                                    const Color.fromARGB(255, 1, 7, 45),
+                              ),
+                              child: const Text(
+                                "Amigos",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ],
                         ),
                         const SizedBox(height: 20),
-
                         const Column(
                           children: [
                             Row(
@@ -217,7 +226,6 @@ class _ContaState extends State<Conta> {
                                 )
                               ],
                             ),
-
                             Row(
                               children: [
                                 Text(
@@ -236,7 +244,6 @@ class _ContaState extends State<Conta> {
                                 )
                               ],
                             ),
-
                             Row(
                               children: [
                                 Text(
@@ -258,7 +265,6 @@ class _ContaState extends State<Conta> {
                           ],
                         ),
                         const SizedBox(height: 10),
-
                         Center(
                           child: Column(
                             children: [
@@ -270,27 +276,28 @@ class _ContaState extends State<Conta> {
                                 ),
                               ),
                               const SizedBox(height: 8),
-
                               Container(
                                 padding: const EdgeInsets.all(13.0),
                                 decoration: BoxDecoration(
                                   color: const Color.fromARGB(255, 1, 7, 45),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     GestureDetector(
-                                      onTap: (){
-                                        Navigator.pushNamed(context, '/gameScreen', arguments: 3); // Passando o ID do jogo
-                                      },
-                                      child: Image.asset('assets/image/conta/stardew_jogados.png')
-                                      ),
+                                        onTap: () {
+                                          Navigator.pushNamed(
+                                              context, '/gameScreen',
+                                              arguments:
+                                                  3); // Passando o ID do jogo
+                                        },
+                                        child: Image.asset(
+                                            'assets/image/conta/stardew_jogados.png')),
                                     const SizedBox(width: 32),
-                                    
                                     const Column(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Text(
                                           'Última sessão',
@@ -327,7 +334,6 @@ class _ContaState extends State<Conta> {
                                   ],
                                 ),
                               ),
-
                               const SizedBox(height: 8),
                               const Text(
                                 'Jogado Recentemente',
@@ -337,53 +343,54 @@ class _ContaState extends State<Conta> {
                                 ),
                               ),
                               const SizedBox(height: 8),
-
                               Container(
                                 padding: const EdgeInsets.all(13.0),
                                 decoration: BoxDecoration(
                                   color: const Color.fromARGB(255, 1, 7, 45),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Row(
                                       children: [
                                         GestureDetector(
-                                          onTap: (){
-                                            Navigator.pushNamed(context, '/gameScreen', arguments: 6); // Passando o ID do jogo
+                                          onTap: () {
+                                            Navigator.pushNamed(
+                                                context, '/gameScreen',
+                                                arguments:
+                                                    6); // Passando o ID do jogo
                                           },
                                           child: Image.asset(
-                                            'assets/image/conta/sims_favorito.png'
-                                          ),
+                                              'assets/image/conta/sims_favorito.png'),
                                         ),
                                         const SizedBox(width: 29),
-
                                         GestureDetector(
-                                          onTap: (){
-                                            Navigator.pushNamed(context, '/gameScreen', arguments: 4); // Passando o ID do jogo
+                                          onTap: () {
+                                            Navigator.pushNamed(
+                                                context, '/gameScreen',
+                                                arguments:
+                                                    4); // Passando o ID do jogo
                                           },
                                           child: Image.asset(
-                                            'assets/image/conta/lis_favorito.png'
-                                          ),
+                                              'assets/image/conta/lis_favorito.png'),
                                         ),
                                         const SizedBox(width: 29),
-
                                         GestureDetector(
-                                          onTap: (){
-                                            Navigator.pushNamed(context, '/gameScreen', arguments: 3); // Passando o ID do jogo
+                                          onTap: () {
+                                            Navigator.pushNamed(
+                                                context, '/gameScreen',
+                                                arguments:
+                                                    3); // Passando o ID do jogo
                                           },
                                           child: Image.asset(
-                                            'assets/image/conta/stardew_favorito.png'
-                                          ),
+                                              'assets/image/conta/stardew_favorito.png'),
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
                               ),
-
                             ],
                           ),
                         )

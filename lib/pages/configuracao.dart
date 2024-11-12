@@ -18,15 +18,17 @@ class _MyWidgetState extends State<Configuracao> {
       _selectedIndex = index;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     // Obtendo a largura da tela
     double screenWidth = MediaQuery.of(context).size.width;
 
     // Definindo tamanho de fonte e padding com base na largura da tela
-    double fontSize = screenWidth < 400 ? 14 : 16;  // Menor que 400px largura, usa font 14
-    double horizontalPadding = screenWidth < 400 ? 20 : 50; // Menor que 400px usa padding menor
+    double fontSize =
+        screenWidth < 400 ? 14 : 16; // Menor que 400px largura, usa font 14
+    double horizontalPadding =
+        screenWidth < 400 ? 20 : 50; // Menor que 400px usa padding menor
 
     return Stack(
       children: [
@@ -39,6 +41,7 @@ class _MyWidgetState extends State<Configuracao> {
 
             // AppBar
             appBar: AppBar(
+              automaticallyImplyLeading: false,
               title: Center(
                 child: Container(
                   margin: const EdgeInsets.only(top: 40),
@@ -64,10 +67,9 @@ class _MyWidgetState extends State<Configuracao> {
                 child: Column(
                   children: [
                     const SizedBox(height: 55),
-
                     GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/conta');
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/conta');
                       },
                       child: buildMenuOption(
                         icon: 'assets/image/configuracao/conta.png',
@@ -75,7 +77,6 @@ class _MyWidgetState extends State<Configuracao> {
                         fontSize: fontSize,
                       ),
                     ),
-                    
                     const SizedBox(height: 20),
                     buildMenuOption(
                       icon: 'assets/image/configuracao/idioma.png',
@@ -107,19 +108,18 @@ class _MyWidgetState extends State<Configuracao> {
                       fontSize: fontSize,
                     ),
                     const SizedBox(height: 20),
-
                     GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/login');
+                      onTap: () {
+                        Navigator.pushReplacementNamed(context, '/login');
                       },
                       child: buildMenuOption(
                         icon: 'assets/image/configuracao/sair.png',
                         label: 'Sair',
                         fontSize: fontSize,
-                        labelColor: Color.fromARGB(255, 205, 4, 4), // Cor para "Sair"
+                        labelColor:
+                            Color.fromARGB(255, 205, 4, 4), // Cor para "Sair"
                       ),
                     ),
-
                   ],
                 ),
               ),
@@ -165,7 +165,7 @@ class _MyWidgetState extends State<Configuracao> {
       ),
     );
   }
-  
+
   void buttonEnterClick() {
     if (_formKey.currentState?.validate() ?? false) {
       Navigator.pushNamed(context, '/home');

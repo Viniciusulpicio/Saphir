@@ -43,7 +43,6 @@ class _AmigosState extends State<Amigos> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        
                         Container(
                           padding: const EdgeInsets.all(
                               16.0), // Define o padding ao redor do Column
@@ -194,7 +193,9 @@ class _AmigosState extends State<Amigos> {
                             )
                           ]),
                         ),
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                         Container(
                           padding: const EdgeInsets.all(
                               16.0), // Define o padding ao redor do Column
@@ -238,8 +239,10 @@ class _AmigosState extends State<Amigos> {
                               child: Image.asset(
                                   "assets/image/jogos/mineirinhoUtra.png",
                                   height: 125),
-                              onTap: () => Navigator.pushNamed(
-                                  context, '/mineirinhoUltra'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/gameScreen',
+                                    arguments: 13); // Passando o ID do jogo
+                              },
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment
@@ -301,10 +304,14 @@ class _AmigosState extends State<Amigos> {
                               child: Image.asset(
                                   "assets/image/jogos/silentHill2.png",
                                   height: 125),
-                              onTap: () =>
-                                  Navigator.pushNamed(context, '/silentHill'),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/gameScreen',
+                                    arguments: 12); // Passando o ID do jogo
+                              },
                             ),
-                            const SizedBox(height: 10,),
+                            const SizedBox(
+                              height: 10,
+                            ),
                             const Text(
                               "Mostrar mais",
                               style: TextStyle(

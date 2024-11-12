@@ -44,7 +44,7 @@ class navBar extends StatelessWidget {
             }
                         // Se for uma nova página, chame a função de navegação
             onTap(index);
-          },
+          }, 
 
           
           items: <BottomNavigationBarItem>[
