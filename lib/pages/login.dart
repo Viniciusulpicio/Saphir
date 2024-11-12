@@ -41,9 +41,14 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    // Obtém o tamanho da tela
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    // Define o padding com base na largura da tela
+    double horizontalPadding = screenWidth < 600 ? 30.0 : 80.0;
+
     return Scaffold(
-      backgroundColor:
-          const Color.fromARGB(255, 30, 30, 30), // Fundo preto opaco
+      backgroundColor: const Color.fromARGB(255, 30, 30, 30),
       body: Center(
         child: Stack(
           children: [
@@ -54,21 +59,22 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 180), // Espaço inicial
+                    const SizedBox(height: 180),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
                       child: TextFormField(
-                        autofocus: false, // Apenas um campo com autofocus
+                        autofocus: false,
                         decoration: const InputDecoration(
-                            filled: true, // Preenche o fundo
-                            fillColor: Colors.white,
-                            iconColor: Color.fromARGB(255, 23, 44, 228),
-                            hintText: "E-mail",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(30)),
-                                borderSide: BorderSide.none)),
+                          filled: true,
+                          fillColor: Colors.white,
+                          iconColor: Color.fromARGB(255, 23, 44, 228),
+                          hintText: "E-mail",
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
                         validator: (String? email) {
                           if (email == "" || email == null) {
                             return "O email não pode estar vazio";
@@ -80,35 +86,35 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                             return "O e-mail não é valido";
                           }
                           return null;
-                        }, 
+                        },
                       ),
                     ),
                     const SizedBox(height: 40),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                      padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
                       child: TextFormField(
-                        obscureText: _showPassword == false ? true : false,
-                        // autofocus removido deste campo
+                        obscureText: !_showPassword,
                         decoration: InputDecoration(
-                            filled: true, // Preenche o fundo
-                            suffixIcon: GestureDetector(
-                              child: Icon(_showPassword == false
-                                  ? Icons.visibility_off
-                                  : Icons.visibility),
-                              onTap: () {
-                                setState(() {
-                                  _showPassword = !_showPassword;
-                                });
-                              },
+                          filled: true,
+                          suffixIcon: GestureDetector(
+                            child: Icon(
+                              _showPassword ? Icons.visibility : Icons.visibility_off,
                             ),
-                            fillColor: Colors.white,
-                            iconColor: const Color.fromARGB(255, 23, 44, 228),
-                            hintText: "Senha",
-                            hintStyle: const TextStyle(color: Colors.grey),
-                            border: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(30)),
-                                borderSide: BorderSide.none)),
+                            onTap: () {
+                              setState(() {
+                                _showPassword = !_showPassword;
+                              });
+                            },
+                          ),
+                          fillColor: Colors.white,
+                          iconColor: const Color.fromARGB(255, 23, 44, 228),
+                          hintText: "Senha",
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
                         validator: (String? senha) {
                           if (senha == null || senha.isEmpty) {
                             return "A senha não pode estar vazia";
@@ -124,15 +130,15 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       padding: const EdgeInsets.only(right: 40),
                       child: Align(
                         alignment: Alignment.centerRight,
-                          child: GestureDetector(
-                            child: const Text(
-                              "Esqueceu a senha?",
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                            onTap: () {
-                              Navigator.pushNamed(context, "/recuperarEmail");
-                            },
+                        child: GestureDetector(
+                          child: const Text(
+                            "Esqueceu a senha?",
+                            style: TextStyle(color: Colors.blue),
                           ),
+                          onTap: () {
+                            Navigator.pushNamed(context, "/recuperarEmail");
+                          },
+                        ),
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -142,16 +148,20 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           buttonEnterClick();
                         },
                         style: OutlinedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 170, vertical: 15),
-                            side:
-                                const BorderSide(color: Colors.white, width: 2),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            backgroundColor:
-                                const Color.fromARGB(255, 30, 30, 30)),
-                        child: const Text("Entrar",
-                            style: TextStyle(color: Colors.white)),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth < 600 ? 80 : 170,
+                            vertical: 15,
+                          ),
+                          side: const BorderSide(color: Colors.white, width: 2),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 30, 30, 30),
+                        ),
+                        child: const Text(
+                          "Entrar",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 40),
@@ -163,8 +173,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child:
-                                Image.asset('assets/image/login/facebook.png'),
+                            child: Image.asset('assets/image/login/facebook.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -173,7 +182,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           child: SizedBox(
                             width: 60,
                             height: 60,
-                            child: Image.asset('assets/image/login/aple.png'),
+                            child: Image.asset('assets/image/login/apple.png'),
                           ),
                         ),
                         const SizedBox(width: 30),
@@ -188,10 +197,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                       ],
                     ),
                     const SizedBox(height: 30),
-                    const Divider(
-                      indent: 90,
-                      endIndent: 90,
-                    ),
+                    const Divider(indent: 90, endIndent: 90),
                     const SizedBox(height: 30),
                     Center(
                       child: Row(
@@ -199,18 +205,13 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                         children: [
                           const Text(
                             "Não tem uma conta?",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
+                            style: TextStyle(color: Colors.white),
                           ),
                           const SizedBox(width: 5),
                           GestureDetector(
                             child: const Text(
                               "Cadastre-se",
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
                             ),
                             onTap: () {
                               Navigator.pushNamed(context, "/cadastro");
@@ -224,7 +225,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
               ),
             ),
             Positioned(
-              top: 0, // Ajusta a posição superior do título
+              top: 0,
               left: 0,
               right: 0,
               child: Center(
@@ -255,4 +256,3 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     }
   }
 }
-

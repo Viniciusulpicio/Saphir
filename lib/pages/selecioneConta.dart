@@ -20,6 +20,8 @@ class _SelecionecontaState extends State<Selecioneconta> {
           child: Scaffold(
             backgroundColor: Colors.transparent, // Torna o fundo transparente para o gradiente aparecer
             appBar: AppBar(
+                              automaticallyImplyLeading: false, // Remove a seta de voltar no AppBar
+
               title: Container(
                 margin: const EdgeInsets.only(top: 40), // Adiciona margem acima do título
                 child: const Text(
@@ -63,7 +65,7 @@ class _SelecionecontaState extends State<Selecioneconta> {
                       padding: const EdgeInsets.all(20),
                       children: [
                         GestureDetector(
-                          onTap: () => {Navigator.pushReplacementNamed(context, '/conta')},
+                          onTap: () => {Navigator.pushNamed(context, '/conta')},
                           child: Column(
                             children: [
                               Image.asset("assets/image/selecioneConta/canelinha.png", height: 120, width: 120),

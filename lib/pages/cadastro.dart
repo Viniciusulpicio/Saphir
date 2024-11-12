@@ -4,10 +4,10 @@ class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
 
   @override
-  State<Cadastro> createState() => _MyWidgetState();
+  State<Cadastro> createState() => _CadastroState();
 }
 
-class _MyWidgetState extends State<Cadastro> {
+class _CadastroState extends State<Cadastro> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -18,6 +18,10 @@ class _MyWidgetState extends State<Cadastro> {
 
   @override
   Widget build(BuildContext context) {
+    // Define largura e altura da tela
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 30, 30, 30),
       body: Center(
@@ -25,33 +29,35 @@ class _MyWidgetState extends State<Cadastro> {
           key: _formKey, // Associar a chave ao Form
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: Column(
                 children: [
-                  const Text(
+                  Text(
                     "saphir",
                     style: TextStyle(
-                      color: Color.fromARGB(255, 23, 44, 228),
-                      fontSize: 60,
+                      color: const Color.fromARGB(255, 23, 44, 228),
+                      fontSize: screenWidth * 0.12, // Tamanho da fonte responsivo
                       fontFamily: 'DaysOne',
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                  SizedBox(height: screenHeight * 0.02),
+                  Text(
                     "Cadastre-se para jogar com seus amigos.",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: screenWidth * 0.05, // Tamanho da fonte responsivo
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02),
                   ElevatedButton(
                     onPressed: () {
                       print("Entrar com o Google pressionado");
                     },
                     style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 80, vertical: 10),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * 0.25,
+                        vertical: screenHeight * 0.02,
+                      ),
                       side: const BorderSide(color: Colors.white, width: 2),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -63,21 +69,21 @@ class _MyWidgetState extends State<Cadastro> {
                       children: [
                         Image.asset(
                           'assets/image/cadastro/google.png',
-                          height: 24,
-                          width: 24,
+                          height: screenHeight * 0.03,
+                          width: screenHeight * 0.03,
                         ),
-                        const SizedBox(width: 10),
-                        const Text(
+                        SizedBox(width: screenWidth * 0.02),
+                        Text(
                           "Entrar com o Google",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40),
-                  const Row(
+                  SizedBox(height: screenHeight * 0.04),
+                  Row(
                     children: <Widget>[
-                      Expanded(
+                      const Expanded(
                         child: Divider(
                           color: Colors.white,
                           indent: 5,
@@ -85,12 +91,13 @@ class _MyWidgetState extends State<Cadastro> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
-                        child: Text('ou',
-                            style: TextStyle(
-                                fontSize: 20, color: Colors.white)),
+                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.08),
+                        child: Text(
+                          'ou',
+                          style: TextStyle(fontSize: screenWidth * 0.05, color: Colors.white),
+                        ),
                       ),
-                      Expanded(
+                      const Expanded(
                         child: Divider(
                           color: Colors.white,
                           indent: 5,
@@ -99,12 +106,12 @@ class _MyWidgetState extends State<Cadastro> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02),
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(
                       hintText: 'Número de telefone ou email',
-                      hintStyle: const TextStyle(color: Colors.grey),
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -126,12 +133,12 @@ class _MyWidgetState extends State<Cadastro> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02),
                   TextFormField(
                     controller: _usernameController,
                     decoration: InputDecoration(
                       hintText: 'Nome de Usuário',
-                      hintStyle: const TextStyle(color: Colors.grey),
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -153,13 +160,13 @@ class _MyWidgetState extends State<Cadastro> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02),
                   TextFormField(
                     controller: _passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Senha',
-                      hintStyle: const TextStyle(color: Colors.grey),
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -178,13 +185,13 @@ class _MyWidgetState extends State<Cadastro> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02),
                   TextFormField(
                     controller: _confirmPasswordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Confirme sua Senha',
-                      hintStyle: const TextStyle(color: Colors.grey),
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -203,34 +210,33 @@ class _MyWidgetState extends State<Cadastro> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: screenHeight * 0.03),
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-
                         Navigator.pushNamed(context, '/home');
                       } else {
                         print("Erro no formulário");
                       }
                     },
                     style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 170, vertical: 15),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.3, vertical: screenHeight * 0.02),
                         side: const BorderSide(color: Colors.white, width: 2),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         backgroundColor: const Color.fromARGB(255, 30, 30, 30)),
-                    child: const Text("Cadastrar",
-                        style: TextStyle(color: Colors.white)),
+                    child: Text("Cadastrar",
+                        style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04)),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: screenHeight * 0.02),
                   GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, '/login');
                     },
-                    child: const Text(
+                    child: Text(
                       "Tem uma conta? Entre",
-                      style: TextStyle(color: Colors.blue, fontSize: 16),
+                      style: TextStyle(color: Colors.blue, fontSize: screenWidth * 0.04),
                     ),
                   ),
                 ],

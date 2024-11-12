@@ -17,18 +17,23 @@ class BarraPesquisaWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Image.asset('assets/image/barra_pesquisa/logo_preto&branco.png'), // logo
-              const SizedBox(width: 10), // espaçamento entre logo e texto
-              const Text(
-                'saphir',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 110, 110, 110),
-                  fontFamily: 'DaysOne',
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/pesquisa'),
+
+
+            child: Row(
+              children: [
+                Image.asset('assets/image/barra_pesquisa/logo_preto&branco.png'), // logo
+                const SizedBox(width: 10), // espaçamento entre logo e texto
+                const Text(
+                  'saphir',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 110, 110, 110),
+                    fontFamily: 'DaysOne',
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           const Icon(Icons.search, color: Color.fromARGB(255, 60, 60, 60), size: 35),
         ],
