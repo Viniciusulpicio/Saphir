@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
@@ -13,6 +14,45 @@ class _CadastroState extends State<Cadastro> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
+  Future<void> _register() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        // Criação do usuário no Firebase
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text.trim(),
+        );
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Cadastro realizado com sucesso!'),
+            backgroundColor: Colors.green,
+          ),
+        );
+
+        // Navega para a página principal
+        Navigator.pushNamed(context, '/home');
+      } on FirebaseAuthException catch (e) {
+        String errorMessage = '';
+        if (e.code == 'email-already-in-use') {
+          errorMessage = 'E-mail já está em uso.';
+        } else if (e.code == 'invalid-email') {
+          errorMessage = 'E-mail inválido.';
+        } else if (e.code == 'weak-password') {
+          errorMessage = 'A senha é muito fraca.';
+        } else {
+          errorMessage = 'Erro: ${e.message}';
+        }
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(errorMessage),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -113,11 +153,8 @@ class _CadastroState extends State<Cadastro> {
                       if (email == null || email.isEmpty) {
                         return "O campo email não pode estar vazio";
                       }
-                      if (email.length < 6) {
-                        return "O e-mail está muito curto";
-                      }
-                      if (!email.contains("@")) {
-                        return "O e-mail não é válido";
+                      if (email.length < 6 || !email.contains("@")) {
+                        return "E-mail inválido";
                       }
                       return null;
                     },
@@ -137,14 +174,8 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     style: const TextStyle(color: Colors.black),
                     validator: (String? usuario) {
-                      if (usuario == null || usuario.isEmpty) {
-                        return "O campo usuário não pode estar vazio";
-                      }
-                      if (usuario.length < 4) {
-                        return "O nome de usuário deve ter pelo menos 4 caracteres";
-                      }
-                      if (usuario.length > 12) {
-                        return "O nome de usuário deve ter no máximo 16 caracteres";
+                      if (usuario == null || usuario.isEmpty || usuario.length < 4) {
+                        return "Nome de usuário inválido";
                       }
                       return null;
                     },
@@ -165,11 +196,8 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     style: const TextStyle(color: Colors.black),
                     validator: (String? senha) {
-                      if (senha == null || senha.isEmpty) {
-                        return "O campo senha não pode estar vazio";
-                      }
-                      if (senha.length < 8) {
-                        return "A senha deve ter pelo menos 8 caracteres";
+                      if (senha == null || senha.isEmpty || senha.length < 8) {
+                        return "Senha inválida";
                       }
                       return null;
                     },
@@ -190,24 +218,15 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     style: const TextStyle(color: Colors.black),
                     validator: (String? confirmPassword) {
-                      if (confirmPassword == null || confirmPassword.isEmpty) {
-                        return "Esse campo não pode estar vazio";
-                      }
                       if (confirmPassword != _passwordController.text) {
-                        return "Senha incorreta";
+                        return "Senhas não coincidem";
                       }
                       return null;
                     },
                   ),
                   SizedBox(height: screenHeight * 0.03),
                   ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, '/home');
-                      } else {
-                        print("Erro no formulário");
-                      }
-                    },
+                    onPressed: _register,
                     style: OutlinedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         horizontal: screenWidth * 0.3,

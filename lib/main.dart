@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:saphir/pages/acao.dart';
 import 'package:saphir/pages/amigos.dart';
 import 'package:saphir/pages/casual.dart';
@@ -27,9 +28,15 @@ import 'package:saphir/pages/recuperar_senha/nova_senha.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_codigo.dart';
 import 'package:saphir/pages/recuperar_senha/recuperar_senha_email.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  // options: DefaultFirebaseOptions.currentPlatform,
+);
+runApp(const MyApp());
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -50,7 +57,7 @@ class MyApp extends StatelessWidget {
         //geral
         '/' : (context) => const Splash(),
         '/gameScreen': (context) => GameScreen(gameId: ModalRoute.of(context)!.settings.arguments as int),
-        '/login': (context) => const Login(),
+        '/login': (context) =>  Login(),
         '/pesquisa': (context) =>  GameListScreen(),
         '/cadastro': (context) => const Cadastro(),
         '/home': (context) => const Home(),

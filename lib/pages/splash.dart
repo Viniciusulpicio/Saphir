@@ -64,7 +64,7 @@ class _SplashScreenState extends State<Splash> with TickerProviderStateMixin {
           if (mounted) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const Login()),
+              MaterialPageRoute(builder: (context) =>  Login()),
             );
           }
         }));
