@@ -37,6 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.8
   carousel_slider: ^5.0.0
   video_player: ^2.9.2
+  firebase_core: ^3.8.0
+  firebase_auth: ^5.3.3
+  google_sign_in: ^6.1.0
+  flutter_facebook_auth: ^7.0.0
+  sign_in_with_apple: ^4.1.0
+
 
 
 
