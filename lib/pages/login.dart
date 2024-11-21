@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,6 +10,44 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
+  Future<void> _signInWithGoogle() async {
+    try {
+      // Inicializar o Google Sign-In
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser == null) {
+        // O usuário cancelou o login
+        return;
+      }
+
+      // Obter as credenciais do Google
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      // Criar credenciais para o Firebase
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Fazer login com o Firebase
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      // Navegar para a próxima tela
+      Navigator.pushReplacementNamed(context, '/home');
+
+      print("Usuário autenticado: ${userCredential.user?.displayName}");
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        _errorMessage = "Erro ao autenticar com Google: ${e.message}";
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = "Erro inesperado ao autenticar com Google.";
+      });
+    }
+  }
+
   final _formKey = GlobalKey<FormState>();
   bool _showPassword = false;
   bool _isLoading = false;
@@ -291,7 +330,14 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
   Widget _buildSocialButton(String assetPath, double screenWidth) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        if (assetPath.contains("google")) {
+          _signInWithGoogle(); // Chama a autenticação do Google
+        } else {
+          // Você pode implementar os outros métodos de login aqui
+          print("Login com outra plataforma não implementado");
+        }
+      },
       child: SizedBox(
         width: screenWidth < 600 ? 50 : 60,
         height: screenWidth < 600 ? 50 : 60,
@@ -321,6 +367,4 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       ],
     );
   }
-
-
 }
