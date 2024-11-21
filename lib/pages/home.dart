@@ -117,8 +117,8 @@ class _HomeState extends State<Home> {
                       physics: const NeverScrollableScrollPhysics(),
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 2,
+                        crossAxisSpacing: 7,
                         childAspectRatio: 3.0,
                       ),
                       itemCount: categories.length,
@@ -161,7 +161,7 @@ class _HomeState extends State<Home> {
 
   Widget _buildSectionTitle(String title, double screenWidth) {
     return Container(
-      margin: EdgeInsets.only(left: screenWidth * 0.1),
+      margin: EdgeInsets.only(left: screenWidth * 0.05),
       alignment: Alignment.centerLeft,
       child: Text(
         title,
@@ -176,10 +176,10 @@ class _HomeState extends State<Home> {
 
   Widget _buildHorizontalCarousel(List<Map<String, dynamic>> itemList, double screenWidth, double screenHeight, BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: screenHeight * 0.02),
+      padding: EdgeInsets.only(bottom: screenHeight * 0.023),
       child: Container(
-        height: screenHeight * 0.2,
-        margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+        height: screenHeight * 0.12,
+        margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(

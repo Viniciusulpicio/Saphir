@@ -139,7 +139,7 @@ class _CadastroState extends State<Cadastro> {
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                      hintText: 'Número de telefone ou email',
+                      hintText: 'Insira seu email',
                       hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
