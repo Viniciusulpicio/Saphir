@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
@@ -12,8 +14,48 @@ class _CadastroState extends State<Cadastro> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   final _formKey = GlobalKey<FormState>();
+
+  Future<void> _signInWithGoogle() async {
+    try {
+      // Inicializar o Google Sign-In
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser == null) {
+        // O usuário cancelou o login
+        return;
+      }
+
+      // Obter as credenciais do Google
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      // Criar credenciais para o Firebase
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Fazer login com o Firebase
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      // Navegar para a próxima tela
+      Navigator.pushReplacementNamed(context, '/home');
+
+      if (kDebugMode) {
+        print("Usuário autenticado: ${userCredential.user?.displayName}");
+      }
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+      });
+    } catch (e) {
+      setState(() {
+      });
+    }
+  }
+
 
   Future<void> _register() async {
     if (_formKey.currentState!.validate()) {
@@ -25,7 +67,7 @@ class _CadastroState extends State<Cadastro> {
         );
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Cadastro realizado com sucesso!'),
             backgroundColor: Colors.green,
           ),
@@ -88,7 +130,13 @@ class _CadastroState extends State<Cadastro> {
                   SizedBox(height: screenHeight * 0.02),
                   ElevatedButton(
                     onPressed: () {
-                      print("Entrar com o Google pressionado");
+                      try {
+                        _signInWithGoogle(); // Chama a autenticação do Google
+                      } catch (e) {
+                        if (kDebugMode) {
+                          print(e);
+                        }
+                      }
                     },
                     style: OutlinedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
@@ -112,7 +160,9 @@ class _CadastroState extends State<Cadastro> {
                         SizedBox(width: screenWidth * 0.02),
                         Text(
                           "Entrar com o Google",
-                          style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.04),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: screenWidth * 0.04),
                         ),
                       ],
                     ),
@@ -121,17 +171,26 @@ class _CadastroState extends State<Cadastro> {
                   Row(
                     children: <Widget>[
                       Expanded(
-                        child: Divider(color: Colors.white, indent: screenWidth * 0.02, endIndent: screenWidth * 0.02),
+                        child: Divider(
+                            color: Colors.white,
+                            indent: screenWidth * 0.02,
+                            endIndent: screenWidth * 0.02),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.07),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.07),
                         child: Text(
                           'ou',
-                          style: TextStyle(fontSize: screenWidth * 0.05, color: Colors.white),
+                          style: TextStyle(
+                              fontSize: screenWidth * 0.05,
+                              color: Colors.white),
                         ),
                       ),
                       Expanded(
-                        child: Divider(color: Colors.white, indent: screenWidth * 0.02, endIndent: screenWidth * 0.02),
+                        child: Divider(
+                            color: Colors.white,
+                            indent: screenWidth * 0.02,
+                            endIndent: screenWidth * 0.02),
                       ),
                     ],
                   ),
@@ -140,7 +199,8 @@ class _CadastroState extends State<Cadastro> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       hintText: 'Insira seu email',
-                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
+                      hintStyle: TextStyle(
+                          color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -164,7 +224,8 @@ class _CadastroState extends State<Cadastro> {
                     controller: _usernameController,
                     decoration: InputDecoration(
                       hintText: 'Nome de Usuário',
-                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
+                      hintStyle: TextStyle(
+                          color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -174,7 +235,9 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     style: const TextStyle(color: Colors.black),
                     validator: (String? usuario) {
-                      if (usuario == null || usuario.isEmpty || usuario.length < 4) {
+                      if (usuario == null ||
+                          usuario.isEmpty ||
+                          usuario.length < 4) {
                         return "Nome de usuário inválido";
                       }
                       return null;
@@ -186,7 +249,8 @@ class _CadastroState extends State<Cadastro> {
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Senha',
-                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
+                      hintStyle: TextStyle(
+                          color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -208,7 +272,8 @@ class _CadastroState extends State<Cadastro> {
                     obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Confirme sua Senha',
-                      hintStyle: TextStyle(color: Colors.grey, fontSize: screenWidth * 0.04),
+                      hintStyle: TextStyle(
+                          color: Colors.grey, fontSize: screenWidth * 0.04),
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
@@ -240,7 +305,8 @@ class _CadastroState extends State<Cadastro> {
                     ),
                     child: Text(
                       "Cadastrar",
-                      style: TextStyle(color: Colors.white, fontSize: screenWidth * 0.045),
+                      style: TextStyle(
+                          color: Colors.white, fontSize: screenWidth * 0.045),
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
@@ -250,7 +316,8 @@ class _CadastroState extends State<Cadastro> {
                     },
                     child: Text(
                       "Tem uma conta? Entre",
-                      style: TextStyle(color: Colors.blue, fontSize: screenWidth * 0.04),
+                      style: TextStyle(
+                          color: Colors.blue, fontSize: screenWidth * 0.04),
                     ),
                   ),
                 ],
