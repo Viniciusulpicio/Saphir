@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -9,6 +10,44 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
+  Future<void> _signInWithGoogle() async {
+    try {
+      // Inicializar o Google Sign-In
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      if (googleUser == null) {
+        // O usuário cancelou o login
+        return;
+      }
+
+      // Obter as credenciais do Google
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      // Criar credenciais para o Firebase
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Fazer login com o Firebase
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      // Navegar para a próxima tela
+      Navigator.pushReplacementNamed(context, '/home');
+
+      print("Usuário autenticado: ${userCredential.user?.displayName}");
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        _errorMessage = "Erro ao autenticar com Google: ${e.message}";
+      });
+    } catch (e) {
+      setState(() {
+        _errorMessage = "Erro inesperado ao autenticar com Google.";
+      });
+    }
+  }
+
   final _formKey = GlobalKey<FormState>();
   bool _showPassword = false;
   bool _isLoading = false;
@@ -82,77 +121,88 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     }
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double horizontalPadding = screenWidth < 600 ? 30.0 : 80.0;
-
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 30, 30, 30),
-      body: Stack(
-        children: [
-          SlideTransition(
-            position: _offsetAnimation,
-            child: Center(
-              child: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 180),
-                        _buildEmailField(),
-                        const SizedBox(height: 40),
-                        _buildPasswordField(),
-                        const SizedBox(height: 20),
-                        if (_errorMessage != null)
-                          Text(
-                            _errorMessage!,
-                            style: const TextStyle(
-                              color: Colors.red,
-                              fontSize: 14,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          // Determinar o espaçamento com base na largura da tela
+          double screenWidth = constraints.maxWidth;
+          double horizontalPadding = screenWidth < 600 ? 30.0 : 80.0;
+
+          return Center(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Logo Animado
+                      SizedBox(
+                        height: constraints.maxHeight * 0.2, // 20% da altura
+                        child: Center(
+                          child: SlideTransition(
+                            position: _offsetAnimation,
+                            child: const Text(
+                              "saphir",
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 23, 44, 228),
+                                fontSize: 60,
+                                fontFamily: 'DaysOne',
+                              ),
                             ),
                           ),
-                        const SizedBox(height: 20),
-                        _buildForgotPassword(screenWidth),
-                        const SizedBox(height: 40),
-                        _buildLoginButton(screenWidth),
-                        const SizedBox(height: 40),
-                        _buildSocialButtons(screenWidth),
-                        const SizedBox(height: 30),
-                        const Divider(indent: 90, endIndent: 90),
-                        const SizedBox(height: 30),
-                        _buildSignUpPrompt(),
-                      ],
-                    ),
+                        ),
+                      ),
+                      const SizedBox(height: 40),
+
+                      // Campo de E-mail
+                      _buildEmailField(),
+                      const SizedBox(height: 40),
+
+                      // Campo de Senha
+                      _buildPasswordField(),
+                      const SizedBox(height: 20),
+
+                      // Mensagem de erro (se houver)
+                      if (_errorMessage != null)
+                        Text(
+                          _errorMessage!,
+                          style: const TextStyle(
+                            color: Colors.red,
+                            fontSize: 14,
+                          ),
+                        ),
+                      const SizedBox(height: 20),
+
+                      // Esqueceu a Senha
+                      _buildForgotPassword(screenWidth),
+                      const SizedBox(height: 40),
+
+                      // Botão de Login
+                      _buildLoginButton(screenWidth),
+                      const SizedBox(height: 40),
+
+                      // Botões Sociais
+                      _buildSocialButtons(screenWidth),
+                      const SizedBox(height: 30),
+
+                      // Divisor
+                      const Divider(indent: 90, endIndent: 90),
+                      const SizedBox(height: 30),
+
+                      // Mensagem de Cadastro
+                      _buildSignUpPrompt(),
+                    ],
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.23,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: SlideTransition(
-                position: _offsetAnimation,
-                child: const Text(
-                  "saphir",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 23, 44, 228),
-                    fontSize: 60,
-                    fontFamily: 'DaysOne',
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
@@ -245,11 +295,12 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
     return ElevatedButton(
       onPressed: _login,
       style: OutlinedButton.styleFrom(
+        minimumSize: Size(500, 50),
         padding: EdgeInsets.symmetric(
           horizontal: screenWidth < 600 ? 80 : 170,
           vertical: 15,
         ),
-        side: const BorderSide(color: Colors.white, width: 2),
+        side: const BorderSide(color: Colors.white, width: 5),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
@@ -279,7 +330,14 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
 
   Widget _buildSocialButton(String assetPath, double screenWidth) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        if (assetPath.contains("google")) {
+          _signInWithGoogle(); // Chama a autenticação do Google
+        } else {
+          // Você pode implementar os outros métodos de login aqui
+          print("Login com outra plataforma não implementado");
+        }
+      },
       child: SizedBox(
         width: screenWidth < 600 ? 50 : 60,
         height: screenWidth < 600 ? 50 : 60,

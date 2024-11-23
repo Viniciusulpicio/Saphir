@@ -4,10 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:saphir/shared/style.dart';
 import 'package:saphir/components/nav_bar.dart';
 
+
 class GameScreen extends StatefulWidget {
   final int gameId; // ID do jogo para buscar os dados
 
-  const GameScreen({Key? key, required this.gameId}) : super(key: key);
+  const GameScreen({super.key, required this.gameId});
 
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -26,7 +27,8 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   Future<void> loadGameData() async {
-    final String response = await rootBundle.loadString('assets/data/games.json');
+    final String response =
+        await rootBundle.loadString('assets/data/games.json');
     final List<dynamic> data = json.decode(response);
 
     setState(() {
@@ -214,10 +216,13 @@ class _GameScreenState extends State<GameScreen> {
                               Navigator.pushNamed(context, route);
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 41, 144, 43),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 41, 144, 43),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
-                                side: const BorderSide(color: Color.fromARGB(255, 51, 84, 60), width: 6),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 51, 84, 60),
+                                    width: 6),
                               ),
                               padding: EdgeInsets.symmetric(
                                 horizontal: screenWidth * 0.1,
@@ -237,7 +242,8 @@ class _GameScreenState extends State<GameScreen> {
                           OutlinedButton(
                             onPressed: () {},
                             style: OutlinedButton.styleFrom(
-                              side: const BorderSide(color: Colors.white, width: 5),
+                              side: const BorderSide(
+                                  color: Colors.white, width: 5),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
